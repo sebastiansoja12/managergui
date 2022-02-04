@@ -21,7 +21,7 @@ import {LandingpageComponent} from './pages/examples/landingpage/landingpage.com
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: IndexComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfilepageComponent },
   { path: 'register', component: RegisterpageComponent },
   { path: 'landing', component: LandingpageComponent },
@@ -36,7 +36,9 @@ const routes: Routes = [
   { path: 'route/delete', component: RouteDeleteComponent },
   { path: 'user/profile', component: UserProfileComponent },
   { path: 'depots', component: DepotAllComponent },
-  { path: 'admin/routes/all/:id', component: AdministratorComponent }
+  { path: 'admin/routes/all/:id', component: AdministratorComponent },
+  { path: 'test', component: IndexComponent }
+
 ];
 
 @NgModule({
