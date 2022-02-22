@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
       this.activatedRoute.queryParams
         .subscribe(params => {
           if (params.registered !== undefined && params.registered === 'true') {
-            this.toastr.success('Użytkownik zarejestrowany');
+            this.toastr.success('Użytkownik zalogowany');
           }
         });
 
@@ -126,7 +126,7 @@ export class LoginComponent implements OnInit {
         if (this.authService.isAdmin() === true) {
           window.location.assign('/admin/routes/all/inparcel-admin');
         } else {
-          window.location.assign('/');
+          window.location.assign('route/all');
         }
         this.toastr.success('Logowanie powiodło się');
 
