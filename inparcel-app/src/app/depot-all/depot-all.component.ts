@@ -1,12 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Depot} from '../auth/model/depot';
 import {DepotService} from '../auth/service/depot.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LoginRequestPayload} from '../auth/login/login-request.payload';
-import {AuthService} from '../auth/service/auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
-import {throwError} from 'rxjs';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-depot-all',
@@ -23,7 +18,7 @@ export class DepotAllComponent implements OnInit {
   isError: boolean;
 
   constructor(
-    private depotService: DepotService
+    private depotService: DepotService, private router: RouterModule
   ) { }
   ngOnInit(): void {
     this.depotService.findAll().subscribe(data => {

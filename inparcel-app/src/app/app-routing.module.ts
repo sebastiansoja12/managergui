@@ -27,22 +27,21 @@ const routes: Routes = [
   { path: 'landing', component: LandingpageComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent },
-  { path: 'routes/all', component: RouteListComponent },
+  { path: 'routes', component: RouteListComponent },
   { path: 'route/parcelCode/:id', component: RouteViewComponent },
   { path: 'route/find', component: RouteFormComponent },
   { path: 'parcel/add', component: ParcelAddComponent },
-  { path: 'route/add', component: RouteGetComponent },
-  { path: 'route/delete', component: RouteDeleteComponent },
+  { path: 'route-create', component: RouteGetComponent },
+  { path: 'route-delete', component: RouteDeleteComponent },
   { path: 'user/profile', component: UserProfileComponent },
   { path: 'depots', component: DepotAllComponent },
-  { path: 'admin/routes/all/:id', component: AdministratorComponent },
+  { path: 'admin/:id', component: AdministratorComponent },
   { path: 'test', component: IndexComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -6,7 +6,7 @@ import {RouteFormComponent} from '../route-find/route-form.component';
 import {User} from '../auth/model/user';
 import {AuthService} from '../auth/service/auth.service';
 import {LocalStorageService} from 'ngx-webstorage';
-
+import {RouterModule} from '@angular/router';
 
 
 @Component({
@@ -22,7 +22,8 @@ export class RouteListComponent implements OnInit {
   username: string;
 
   constructor(private routeService: RouteService, private authService: AuthService,
-              private localStorage: LocalStorageService) {
+              private localStorage: LocalStorageService,
+              private route: RouterModule) {
   }
 
   // tslint:disable-next-line:typedef

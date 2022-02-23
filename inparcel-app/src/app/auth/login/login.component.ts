@@ -126,7 +126,7 @@ export class LoginComponent implements OnInit {
         if (this.authService.isAdmin() === true) {
           window.location.assign('/admin/routes/all/inparcel-admin');
         } else {
-          window.location.assign('route/all');
+          window.location.assign('routes/all');
         }
         this.toastr.success('Logowanie powiodło się');
 
