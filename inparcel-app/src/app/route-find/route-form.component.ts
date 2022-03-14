@@ -1,13 +1,10 @@
-import {Component, EventEmitter, Injectable, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Injectable, OnInit, Output} from '@angular/core';
 import {Route} from '../auth/model/route';
 import {ActivatedRoute, Router} from '@angular/router';
-import { RouteService} from '../auth/service/route-service.service';
+import {RouteService} from '../auth/service/route-service.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../auth/service/auth.service';
 import {ToastrService} from 'ngx-toastr';
-import {RouteRequestPayload} from './route-request.payload';
 import {LocalStorageService} from 'ngx-webstorage';
-import {throwError} from 'rxjs';
 
 
 @Component({

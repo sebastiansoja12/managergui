@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
-
-import { AuthGuard } from './auth/auth.guard';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {SignupComponent} from './auth/signup/signup.component';
+import {LoginComponent} from './auth/login/login.component';
 import {HomeComponent} from './home/home.component';
 import {RouteListComponent} from './route-list/route-list.component';
 import {RouteViewComponent} from './route-view/route-view.component';
@@ -29,7 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'routes', component: RouteListComponent },
   { path: 'route/parcelCode/:id', component: RouteViewComponent },
-  { path: 'route/find', component: RouteFormComponent },
+  { path: 'route-find', component: RouteFormComponent },
   { path: 'parcel/add', component: ParcelAddComponent },
   { path: 'route-create', component: RouteGetComponent },
   { path: 'route-delete', component: RouteDeleteComponent },
