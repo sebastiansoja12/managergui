@@ -124,9 +124,9 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginRequestPayload).subscribe(data => {
         this.isError = false;
         if (this.authService.isAdmin() === true) {
-          window.location.assign('/admin/routes/all/inparcel-admin');
+          window.location.assign('/admin/routes/inparcel-admin');
         } else {
-          window.location.assign('routes/all');
+          window.location.assign('routes');
         }
         this.toastr.success('Logowanie powiodło się');
 

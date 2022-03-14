@@ -92,6 +92,10 @@
           <a class="nav-link" [routerLink]="['/user/profile']"> {{username}} </a>
         </li>
         <li class="nav-item"
+            *ngIf="isLoggedIn">
+          <a class="nav-link" [routerLink]="['/route-create']"> Rejestracja przesyłek </a>
+        </li>
+        <li class="nav-item"
             *ngIf="!isLoggedIn">
           <a
             class="nav-link"
