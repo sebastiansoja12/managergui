@@ -8,7 +8,8 @@ import {Parcel} from '../auth/model/parcel';
 import {Route} from '../auth/model/route';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {throwError} from 'rxjs';
+import {Subscription, throwError, timer} from 'rxjs';
+import {map, share} from 'rxjs/operators';
 
 @Component({
   selector: 'app-route-get',
@@ -22,6 +23,12 @@ export class RouteGetComponent implements OnInit {
   isError: boolean;
   routes: Route[];
   routesList: Route[];
+  temporaryRoutesList: Route[];
+  time = new Date();
+  rxTime = new Date();
+  intervalId;
+  subscription: Subscription;
+
   constructor(private routeService: RouteService, private parcelService: ParcelService,
               private localStorage: LocalStorageService,
               private router: Router,
@@ -42,13 +49,31 @@ export class RouteGetComponent implements OnInit {
     this.routeService.findAll().subscribe(data => {
       this.routesList = data;
     });
+
+    this.routeService.findTemporaryRoutes().subscribe(data => {
+      this.temporaryRoutesList = data;
+    });
+
+    this.intervalId = setInterval(() => {
+      this.time = new Date();
+    }, 1000);
+
+    // Using RxJS Timer
+    this.subscription = timer(0, 1000)
+      .pipe(
+        map(() => new Date()),
+        share()
+      )
+      .subscribe(time => {
+        this.rxTime = time;
+      });
   }
 
   getRoute(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
     this.parcel.custom  =  this.getRouteForm.get('custom').value;
     this.route.parcel = this.parcel;
-    this.routeService.save(this.route).subscribe(data => {
+    this.routeService.saveTemporary(this.route).subscribe(data => {
       this.isError = false;
     }, error => {
       this.isError = true;
@@ -69,5 +94,25 @@ export class RouteGetComponent implements OnInit {
   toCSV(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
     window.location.href = 'http://localhost:8080/api/parcels/' + this.parcel.id + '/csv';
+  }
+
+  // tslint:disable-next-line:typedef use-lifecycle-interface
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+  saveTemporaryRoutes(): any {
+    this.routeService.save(this.temporaryRoutesList).subscribe(data => {
+      this.isError = false;
+    }, error => {
+      this.isError = true;
+      window.location.assign('/');
+      this.toastr.success('Błąd!');
+      throwError(error);
+
+    });
+    window.location.reload();
   }
 }

@@ -18,12 +18,16 @@ export class RouteService {
   depotinfUrl: string;
   registerParcel: string;
   userUrl: string;
+  registerTemporaryRoute: string;
+
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
     this.routeUrl = 'http://localhost:8080/api/routes';
     this.depotinfUrl = 'http://localhost:8080/api/depots';
     this.registerParcel = 'http://localhost:8080/api/routes';
     this.userUrl = 'http://localhost:8080/api/routes/user/';
+    this.registerTemporaryRoute = 'http://localhost:8080/api/routes/tmp';
+
 
   }
 
@@ -34,6 +38,11 @@ export class RouteService {
   public findAll(): Observable<Route[]> {
     return this.http.get<Route[]>(this.routeUrl);
   }
+
+  public findTemporaryRoutes(): Observable<any> {
+    return this.http.get<Array<Route>>(this.routeUrl + '/tmp');
+  }
+
   public findAllDepots(): Observable<Depot[]> {
 
     return this.http.get<Depot[]>(this.depotinfUrl);
@@ -41,7 +50,15 @@ export class RouteService {
   public getCity(): string{
     return this.localStorage.retrieve('city');
   }
-  public save(parcelRoute: Route): Observable<boolean>  {
+  public saveTemporary(parcelRoute: Route): Observable<boolean>  {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Basic '});
+    return this.http.post<Route>(this.registerTemporaryRoute, parcelRoute, {headers}).pipe(map(data => {
+      return true;
+    }));
+  }
+  public save(parcelRoute: Array<Route>): Observable<boolean>  {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '});
