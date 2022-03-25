@@ -42,6 +42,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {HeaderComponent} from './header/header.component';
     DepotAllComponent,
     SideBarComponent,
     AdministratorComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
