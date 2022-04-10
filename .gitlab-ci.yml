@@ -15,5 +15,4 @@ sonarcloud-check:
     - merge_requests
     - master
     - develop
-    - VERSION_2022.3
-    - VERSION_2022.2
+    - main
