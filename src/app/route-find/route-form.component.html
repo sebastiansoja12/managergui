@@ -1,22 +1,49 @@
-<section class="findParcel">
-<div class="contact-form">
-  <label><h1>Śledź<em> paczkę</em></h1> </label>
+<div class="welcome-area" id="welcome">
+  <div class="page-header header-filter">
+    <div class="squares square1"></div>
+    <div class="squares square2"></div>
+    <div class="squares square3"></div>
+    <div class="squares square4"></div>
+    <div class="squares square5"></div>
+    <div class="squares square6"></div>
+    <div class="squares square7"></div>
+    <div class="col-lg-6 mb-lg-auto">
+      <div class="card card-register">
+        <div class="card-header">
+          <img
+            alt="Card image"
+            class="card-img"
+            src="assets/img/square1-red.png"
+          />
 
-  <form [formGroup]="parcelFindForm" (ngSubmit)="findParcel()" >
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <fieldset>
-          <input type="text" [formControlName]="'id'"  id="id" name="name" placeholder="Kod przesyłki" required=""
-                 style="background-color: rgba(250,250,250,0.3);">
-        </fieldset>
+          <h4 class="card-title">Znajdź przesyłkę</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="parcelFindForm" (ngSubmit)="findParcel()" >
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="tim-icons icon-app"> </i>
+                </div>
+              </div>
+              <input
+                class="form-control"
+                placeholder="Wpisz kod przesyłki"
+                type="text" [formControlName]="'id'"
+                name="name"
+                required=""
+              />
+            </div>
+            <div class="card-footer">
+              <button
+                class="btn btn-danger btn-round btn-lg"
+                type="submit" id="form-submit">
+                Znajdź
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-lg-12">
-        <fieldset>
-          <button type="submit" id="form-submit" class="main-button">Znajdź</button>
-        </fieldset>
-      </div>
-      <p class="login-failed-text" *ngIf='this.isError' >Paczka nie znaleziona.</p>
     </div>
-  </form>
+  </div>
 </div>
-</section>

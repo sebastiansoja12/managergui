@@ -2,3 +2,12 @@
   margin-top: 30%;
   margin-left: 50%;
 }
+.card-register .card-header .card-title {
+  position: relative;
+  font-size: 5em;
+  font-weight: 900;
+  color: white;
+  text-transform: lowercase;
+  margin-left: -5px;
+  z-index: 1;
+}
