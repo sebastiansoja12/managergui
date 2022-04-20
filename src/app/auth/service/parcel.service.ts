@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Route} from '../model/route';
 import {Parcel} from '../model/parcel';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {ParcelPayload} from '../../parcel-add/parcel-payload';
+import {ParcelPayload} from '../../parcels/parcel-add/parcel-payload';
 import {tap} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
 import {AuthService} from './auth.service';

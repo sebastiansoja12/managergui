@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import {LoginResponse} from '../login/login-response.payload';
 import {LocalStorageService} from 'ngx-webstorage';
-import {RouteRequestPayload} from '../../route-find/route-request.payload';
+import {RouteRequestPayload} from '../../routes/route-find/route-request.payload';
 import {User} from '../model/user';
 import {Depot} from '../model/depot';
 import {Parcel} from '../model/parcel';
