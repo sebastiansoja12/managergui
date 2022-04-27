@@ -1,113 +1,209 @@
-<footer class="contact-us" id="contact-us">
-  <form  [formGroup]="createParcelForm" (ngSubmit)="createParcel()">
+<div class="parcel-add-section">
+  <form [formGroup]="createParcelForm" (ngSubmit)="createParcel()">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-6 col-sm-12">
-        <div class="contact-form center">
-          <h2 class="section-title">Dane nadawcy </h2>
-            <div class="row">
-              <div class="col-lg-6 col-md-12 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'firstName'" id="firstName" class="form-control" name="firstName"
-                         placeholder="Imię" required=""
-                         style="background-color: rgba(250,250,250,0.3);" >
-                </fieldset>
+      <div class="col-12 col-lg-3">
+        <div class="card">
+          <div class="card-body">
+              <div class="d-grid">
+                <button class="btn btn-primary submit">Zapisz</button>
               </div>
-              <div class="col-lg-6 col-md-12 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'lastName'" id="lastName" class="form-control" name="lastName"placeholder="Nazwisko" required=""
-                         style="background-color: rgba(250,250,250,0.3);" >
-                </fieldset>
+            <div class="fm-menu">
+              <a href="javascript:" class="list-group "><i class="bx bx-devices me-2"></i><span>Edytor</span></a>
+              <a href="javascript:" class="list-group "><i class="bx bx-plug me-2"></i><span>Śledzenie</span></a>
+              <a href="javascript:" class="list-group "><i class="bx bx-trash-alt me-2"></i>
+                <span>Usuwanie przesyłek</span></a>
+              <a href="javascript:" class="list-group "><i class="bx bx-image me-2"></i><span>Etykiety</span></a>
+              <a href="javascript:" class="list-group "><i class="bx bx-beer me-2"></i><span>Podania</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-0 text-primary font-weight-bold">
+              <div>
               </div>
-              <div class="col-lg-6 col-md-12 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'senderEmail'"
-                         placeholder="Email nadawcy" required=""
-                         style="background-color: rgba(250,250,250,0.3);" id="email" class="form-control" name="email">
-
-                </fieldset>
+            </h5>
+            <p class="mb-0 mt-2"><span class="text-secondary">Wykorzystane</span>
+              <span class="float-end text-primary"></span>
+            </p>
+            <div class="progress mt-3" style="height:7px;">
+            </div>
+            <div class="mt-3"></div>
+            <div class="d-flex align-items-center">
+              <div class="fm-file-box bg-light-primary text-primary"><i class="bx bx-image"></i>
               </div>
-
-              <div class="col-lg-6">
-              <fieldset>
-                  <input type="text" [formControlName]="'senderTelephone'"
-                         placeholder="Telefon nadawcy" required=""
-                         style="background-color: rgba(250,250,250,0.3); " id="sender_telephone" class="form-control" name="sender_telephone">
-                </fieldset>
+              <div class="flex-grow-1 ms-2">
+                <h6 class="mb-0">Liczba przesyłek</h6>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="fm-search">
+              <div class="mb-0">
+                <h2 class="section-title">Dane nadawcy </h2>
+                <div class="input-group input-group-lg">
+                    <div class="col-sm-12 col-lg-12">
+                      <div class="input-group">
+                        <input type="text" [formControlName]="'firstName'" id="firstName"
+                               class="form-control"
+                               name="firstName"
+                               placeholder="Imię" required="">
+                        <input type="text" [formControlName]="'lastName'" id="lastName"
+                               class="form-control" name="lastName"
+                               placeholder="Nazwisko" required="">
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12">
+                      <div class="input-group">
+                        <input type="text" [formControlName]="'senderEmail'"
+                               placeholder="Email nadawcy" required=""
+                                id="email" class="form-control" name="email">
+                        <input type="text" [formControlName]="'senderTelephone'"
+                               placeholder="Telefon nadawcy" required=""
+                               id="sender_telephone" class="form-control"
+                               name="sender_telephone">
+                      </div>
+                    </div>
+                  </div>
+              </div>
+                <h2 class="section-title">Dane odbiorcy </h2>
+                <div class="input-group input-group-lg">
+                  <div class="col-sm-12 col-lg-12">
+                    <div class="input-group">
+                      <input name="recipientFirstName" type="text" [formControlName]="'recipientFirstName'"
+                             id="recipientFirstName"
+                             class="form-control"
+                             placeholder="Imię" required="">
+                      <input name="recipientLastName" type="text" [formControlName]="'recipientLastName'"
+                             placeholder="Nazwisko" required=""
+                             class="form-control"
+                             id="recipientLastName">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    <div class="input-group">
+                      <input name="recipientEmail" type="text" [formControlName]="'recipientEmail'"
+                              placeholder="Email odbiorcy"
+                              class="form-control"
+                              required="" id="recipientEmail">
+                      <input type="text" [formControlName]="'recipientTelephone'"
+                             placeholder="Telefon odbiorcy" required=""
+                             class="form-control"
+                             name="recipientTelephone"
+                             id="recipientTelephone">
+                    </div>
+                  </div>
+                </div>
+              <div class="input-group input-group-lg">
+                <div class="col-sm-12 col-lg-12">
+                  <div class="input-group">
+                  <input type="text" [formControlName]="'recipientCity'" placeholder="Miasto" required=""
+                         class="form-control" name="recipientCity"
+                         id="recipientCity">
+                <input type="text" [formControlName]="'recipientPostalCode'" placeholder="Kod pocztowy"
+                       id="postalCode" class="form-control"
+                       name="postalCode">
+              </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-lg-12">
+                  <input type="text" [formControlName]="'recipientStreet'" placeholder="Ulica" required=""
+                         id="street" class="form-control"
+                         name="street">
+              </div>
+              <div class="row mt-3">
+                <div class="col-12 col-lg-4">
+                  <div class="card shadow-none border radius-15">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success"></i>
+                        </div>
+                        <div class="ms-auto font-24">
+                        </div>
+                      </div>
+                      <h5 class="mt-3 mb-0">---</h5>
+                      <p class="mb-1 mt-4"></p>
+                      <div class="progress" style="height: 7px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4" >
+                  <div class="card shadow-none border radius-15">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success"></i>
+                        </div>
+                        <div class="ms-auto font-24">
+                        </div>
+                      </div>
+                      <h5 class="mt-3 mb-0">---</h5>
+                      <p class="mb-1 mt-4"></p>
+                      <div class="progress" style="height: 7px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4" >
+                  <div class="card shadow-none border radius-15">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success"></i>
+                        </div>
+                        <div class="ms-auto font-24">
+                        </div>
+                      </div>
+                      <h5 class="mt-3 mb-0">---</h5>
+                      <p class="mb-1 mt-4"></p>
+                      <div class="progress" style="height: 7px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--end row-->
+              <div class="d-flex align-items-center">
+                <div>
+                  <h5 class="mb-0">Ostatnie przesyłki</h5>
+                </div>
+                <div class="ml-sm-auto"><a href="javascript:;"
+                                           class="btn btn-sm btn-outline-secondary"
+                                           routerLink="/routes">Pokaż wszystkie</a>
+                </div>
+              </div>
+              <div class="table-responsive mt-3">
+                <table class="table table-striped table-hover table-sm mb-0">
+                  <thead>
+                  <tr>
+                    <th>Kod <i class="bx bx-up-arrow-alt ms-2"></i>
+                    </th>
+                    <th>Utworzono</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-    <p></p>
-      <h1></h1>
-    <div class="footer-content">
-      <div class="row">
-        <div class="col-lg-8 col-md-6 col-sm-12">
-          <div class="contact-form">
-            <h2 class="section-title">Dane odbiorcy </h2>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <fieldset>
-                    <input name="recipientFirstName" type="text" [formControlName]="'recipientFirstName'"
-                           id="recipientFirstName" placeholder="Imię" required=""
-                           style="background-color: rgba(250,250,250,0.3);">
-                  </fieldset>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <fieldset>
-                    <input name="recipientLastName" type="text" [formControlName]="'recipientLastName'"
-                           placeholder="Nazwisko" required="" id="recipientLastName"
-                           style="background-color: rgba(250,250,250,0.3);">
-                  </fieldset>
-                </div>
-              <div class="col-md-6 col-sm-12">
-                <fieldset>
-                  <input name="recipientEmail" type="text" [formControlName]="'recipientEmail'"
-                         placeholder="Email odbiorcy" required="" id="recipientEmail"
-                         style="background-color: rgba(250,250,250,0.3);">
-                </fieldset>
-              </div>
-                <div class="col-lg-6">
-                  <fieldset>
-                    <input type="text" [formControlName]="'recipientTelephone'"
-                           placeholder="Telefon odbiorcy" required=""
-                           style="background-color: rgba(250,250,250,0.3);" class="form-control" name="recipientTelephone"
-                           id="recipientTelephone">
-                  </fieldset>
-                </div>
-              <div class="col-md-6 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'recipientCity'"  placeholder="Miasto" required=""
-                         style="background-color: rgba(250,250,250,0.3);"  class="form-control" name="recipientCity"
-                         id="recipientCity">
-                </fieldset>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'recipientPostalCode'"  placeholder="Kod pocztowy"
-                         style="background-color: rgba(250,250,250,0.3);" id="postalCode" class="form-control"
-                         name="postalCode">
-                </fieldset>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <fieldset>
-                  <input type="text" [formControlName]="'recipientStreet'"  placeholder="Ulica" required=""
-                         style="background-color: rgba(250,250,250,0.3);" id="street" class="form-control" name="street">
-                </fieldset>
-              </div>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <button type="submit" id="form-submit" class="main-button">Wysyłam</button>
-                  </fieldset>
-                </div>
-              </div>
-          </div>
-        </div>
-  </div>
-    </div>
   </div>
   </form>
-</footer>
+</div>

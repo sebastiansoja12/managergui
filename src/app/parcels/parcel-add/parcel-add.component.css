@@ -1,6 +1,9 @@
 .parcel-add-section {
-  margin: 150px;
+  margin: 100px;
+  margin-left: auto;
+  position: center;
 }
+
 label {
   /* Other styling... */
   text-align: right;
@@ -404,7 +407,9 @@ button.main-button:hover {
 input[type='text'] { font-size: 60px; }
 
 #firstName, #lastName, #email, #destination_address, #destination_telephone,
-#sender_telephone, #recipientFirstName, #recipientLastName, #recipientCity, #recipientEmail, #street, #recipientTelephone {
+#sender_telephone, #recipientFirstName, #recipientLastName, #recipientCity, #recipientEmail, #street,
+#recipientTelephone,
+#postalCode {
   font-size: 1em;
 
 }

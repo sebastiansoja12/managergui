@@ -36,7 +36,8 @@ export class ParcelAddComponent implements OnInit {
       recipientCity: new FormControl('', Validators.required),
       recipientStreet: new FormControl('', Validators.required),
       recipientEmail: new FormControl('', Validators.required),
-      recipientPostalCode: new FormControl('', Validators.required)
+      recipientPostalCode: new FormControl('', Validators.required),
+      parcelType: new FormControl('', Validators.required)
     });
   }
 
@@ -52,6 +53,7 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.recipientStreet = this.createParcelForm.get('recipientStreet').value;
     this.parcel.recipientEmail = this.createParcelForm.get('recipientEmail').value;
     this.parcel.recipientPostalCode = this.createParcelForm.get('recipientPostalCode').value;
+    this.parcel.parcelType = this.createParcelForm.get('parcelType').value;
     this.parcelService.save(this.parcel)
       .subscribe(() => {
       this.router.navigate(['/'],
