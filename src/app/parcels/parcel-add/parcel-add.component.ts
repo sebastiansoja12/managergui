@@ -36,11 +36,8 @@ export class ParcelAddComponent implements OnInit {
       recipientCity: new FormControl('', Validators.required),
       recipientStreet: new FormControl('', Validators.required),
       recipientEmail: new FormControl('', Validators.required),
-      custom: new FormControl('', Validators.required)
+      recipientPostalCode: new FormControl('', Validators.required)
     });
-  }
-  makeTrue(): boolean {
-    return this.parcel.custom = true;
   }
 
   createParcel(): any {
@@ -54,7 +51,7 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.recipientCity = this.createParcelForm.get('recipientCity').value;
     this.parcel.recipientStreet = this.createParcelForm.get('recipientStreet').value;
     this.parcel.recipientEmail = this.createParcelForm.get('recipientEmail').value;
-    this.parcel.custom = this.createParcelForm.get('custom').value;
+    this.parcel.recipientPostalCode = this.createParcelForm.get('recipientPostalCode').value;
     this.parcelService.save(this.parcel)
       .subscribe(() => {
       this.router.navigate(['/'],

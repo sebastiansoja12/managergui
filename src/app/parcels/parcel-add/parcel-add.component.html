@@ -73,13 +73,22 @@
                   <fieldset>
                     <input type="text" [formControlName]="'recipientTelephone'"
                            placeholder="Telefon odbiorcy" required=""
-                           style="background-color: rgba(250,250,250,0.3);" id="destination_telephone" class="form-control" name="recipientTelephone" id="recipientTelephone">
+                           style="background-color: rgba(250,250,250,0.3);" class="form-control" name="recipientTelephone"
+                           id="recipientTelephone">
                   </fieldset>
                 </div>
               <div class="col-md-6 col-sm-12">
                 <fieldset>
                   <input type="text" [formControlName]="'recipientCity'"  placeholder="Miasto" required=""
-                         style="background-color: rgba(250,250,250,0.3);" id="destination_address" class="form-control" name="destinationCity" id="recipientCity">
+                         style="background-color: rgba(250,250,250,0.3);"  class="form-control" name="recipientCity"
+                         id="recipientCity">
+                </fieldset>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <fieldset>
+                  <input type="text" [formControlName]="'recipientPostalCode'"  placeholder="Kod pocztowy"
+                         style="background-color: rgba(250,250,250,0.3);" id="postalCode" class="form-control"
+                         name="postalCode">
                 </fieldset>
               </div>
               <div class="col-md-6 col-sm-12">
