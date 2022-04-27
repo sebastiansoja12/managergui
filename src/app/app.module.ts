@@ -43,6 +43,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { FooterComponent } from './footer/footer.component';
     SideBarComponent,
     AdministratorComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ParcelInfoComponent
   ],
   imports: [
     BrowserModule,

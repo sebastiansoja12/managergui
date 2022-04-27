@@ -22,7 +22,8 @@ export class AdministratorComponent implements OnInit {
   routeSub: Subscription;
 
   constructor(private routeService: RouteService, private authService: AuthService,
-              private localStorage: LocalStorageService, private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router) {
+              private localStorage: LocalStorageService, private userService: UserService,
+              private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
