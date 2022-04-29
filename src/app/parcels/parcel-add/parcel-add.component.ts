@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ParcelService} from '../../auth/service/parcel.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Parcel} from '../../auth/model/parcel';
-import {throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
-import { ToastrService } from 'ngx-toastr';
+import {ToastrService} from 'ngx-toastr';
+import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
 
 
 @Component({
@@ -15,13 +15,30 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ParcelAddComponent implements OnInit {
 
+
   createParcelForm: FormGroup;
+  parcelType: ParcelTypeDetermination[];
+  ParcelTypeDetermination = ParcelTypeDetermination;
+  enumKeys = [];
+  ParcelType2LabelMapping: Record<ParcelTypeDetermination, string> = {
+    [ParcelTypeDetermination.TINY]: '5cmx5cm5cm',
+    [ParcelTypeDetermination.SMALL]: '10cmx10cmx10cm',
+    [ParcelTypeDetermination.AVERAGE]: '50cmx50cmx50cm',
+    [ParcelTypeDetermination.BIG]: '80cmx80cmx80cm',
+    [ParcelTypeDetermination.MEDIUM]: '30cmx30cmx30cm',
+    [ParcelTypeDetermination.CUSTOM]: 'XcmXcmXcm'
+  };
+
+  public stateTypes = Object.values(ParcelTypeDetermination).filter(value => typeof value === 'number');
+
+  public parcelTypes = Object.values(ParcelTypeDetermination);
 
   constructor(
     private parcelService: ParcelService, private parcel: Parcel,
-    private router: Router, private authService: AuthService,
-    private toastr: ToastrService
-  ) {}
+    private router: Router, private authService: AuthService, private toastr: ToastrService) {
+    this.enumKeys = Object.keys(this.ParcelTypeDetermination);
+  }
+
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
@@ -53,7 +70,6 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.recipientStreet = this.createParcelForm.get('recipientStreet').value;
     this.parcel.recipientEmail = this.createParcelForm.get('recipientEmail').value;
     this.parcel.recipientPostalCode = this.createParcelForm.get('recipientPostalCode').value;
-    this.parcel.parcelType = this.createParcelForm.get('parcelType').value;
     this.parcelService.save(this.parcel)
       .subscribe(() => {
       this.router.navigate(['/'],
@@ -62,6 +78,5 @@ export class ParcelAddComponent implements OnInit {
       this.toastr.error('Paczka nie została nadana!');
     });
   }
-
 
 }
