@@ -14,6 +14,7 @@ export class Parcel {
   recipientLastName: string;
   recipientStreet: string;
   recipientPostalCode: string;
-  parcelType: ParcelType;
+  price: number;
+  parcelType: string;
 
 }
