@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
-import {ParcelType} from '../../auth/model/parcelType';
 
 
 @Component({
