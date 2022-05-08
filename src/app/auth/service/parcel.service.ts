@@ -7,6 +7,7 @@ import {tap} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
 import {AuthService} from './auth.service';
 import {Observable} from 'rxjs';
+import {PaymentInformation} from '../model/PaymentInformation';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,9 @@ export class ParcelService {
 
     return this.http.post('http://localhost:8080/api/parcels', parcel, { responseType: 'text' });
   }
+
+  findPaymentByParcelId(id: string): Observable<PaymentInformation> {
+    return this.http.get<PaymentInformation>('http://localhost:8080/api/payments/'  + id);
+  }
+
 }

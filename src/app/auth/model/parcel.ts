@@ -1,3 +1,4 @@
+import {ParcelType} from './parcelType';
 
 
 export class Parcel {
@@ -13,6 +14,7 @@ export class Parcel {
   recipientLastName: string;
   recipientStreet: string;
   recipientPostalCode: string;
-  parcelSize: string;
+  price: number;
+  parcelType: string;
 
 }

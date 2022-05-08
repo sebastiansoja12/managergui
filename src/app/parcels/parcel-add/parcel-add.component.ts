@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
+import {ParcelType} from '../../auth/model/parcelType';
 
 
 @Component({
@@ -70,13 +71,14 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.recipientStreet = this.createParcelForm.get('recipientStreet').value;
     this.parcel.recipientEmail = this.createParcelForm.get('recipientEmail').value;
     this.parcel.recipientPostalCode = this.createParcelForm.get('recipientPostalCode').value;
+    this.parcel.parcelType = 'AVERAGE';
     this.parcelService.save(this.parcel)
       .subscribe(() => {
-      this.router.navigate(['/'],
-        { queryParams: { sent: 'true' } });
-    }, error => {
-      this.toastr.error('Paczka nie została nadana!');
-    });
+        this.router.navigateByUrl('/parcel/information/' + this.parcel.id).then(r => 'xd');
+      }, error => {
+        this.toastr.error('Paczka nie została nadana!');
+      });
+
   }
 
 }
