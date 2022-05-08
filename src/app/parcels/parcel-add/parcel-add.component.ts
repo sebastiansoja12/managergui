@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
-import {ParcelType} from '../../auth/model/parcelType';
 
 
 @Component({
@@ -21,6 +20,7 @@ export class ParcelAddComponent implements OnInit {
   parcelType: ParcelTypeDetermination[];
   ParcelTypeDetermination = ParcelTypeDetermination;
   enumKeys = [];
+  url: string;
   ParcelType2LabelMapping: Record<ParcelTypeDetermination, string> = {
     [ParcelTypeDetermination.TINY]: '5cmx5cm5cm',
     [ParcelTypeDetermination.SMALL]: '10cmx10cmx10cm',
@@ -38,6 +38,7 @@ export class ParcelAddComponent implements OnInit {
     private parcelService: ParcelService, private parcel: Parcel,
     private router: Router, private authService: AuthService, private toastr: ToastrService) {
     this.enumKeys = Object.keys(this.ParcelTypeDetermination);
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
 
@@ -74,7 +75,7 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.parcelType = 'AVERAGE';
     this.parcelService.save(this.parcel)
       .subscribe(() => {
-        this.router.navigateByUrl('/parcel/information/' + this.parcel.id).then(r => 'xd');
+        this.router.navigateByUrl(this.url + '/parcel/information/' + this.parcel.id).then(r => 'xd');
       }, error => {
         this.toastr.error('Paczka nie została nadana!');
       });

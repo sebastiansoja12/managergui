@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SignupRequestPayload } from './singup-request.payload';
-import { AuthService } from '../service/auth.service';
-import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../service/auth.service';
+import {ToastrService} from 'ngx-toastr';
+import {Router} from '@angular/router';
 import {RouteService} from '../service/route-service.service';
 import {Depot} from '../model/depot';
 import {Route} from '../model/route';
@@ -16,13 +15,15 @@ import {throwError} from 'rxjs';
 })
 export class SignupComponent implements OnInit {
 
-  signupRequestPayload: {  username: string;
+  signupRequestPayload: {
+    username: string;
     password: string;
     email: string;
     role: string;
     firstName: string;
     lastName: string;
-    depotCode: any};
+    depotCode: any
+  };
   signupForm: FormGroup;
   depot: Depot[];
   route: Route[];

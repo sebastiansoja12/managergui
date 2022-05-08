@@ -14,20 +14,22 @@ import {PaymentInformation} from '../model/PaymentInformation';
 })
 export class ParcelService {
 
+  url: string;
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService,
               private authService: AuthService) {
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
 
   public save(parcel: Parcel): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', this.localStorage.retrieve('authenticationToken'));
 
-    return this.http.post('http://localhost:8080/api/parcels', parcel, { responseType: 'text' });
+    return this.http.post(this.url + '/api/parcels', parcel, { responseType: 'text' });
   }
 
   findPaymentByParcelId(id: string): Observable<PaymentInformation> {
-    return this.http.get<PaymentInformation>('http://localhost:8080/api/payments/'  + id);
+    return this.http.get<PaymentInformation>(this.url + '/api/payments/'  + id);
   }
 
 }

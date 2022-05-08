@@ -1,8 +1,8 @@
-import { Injectable, AfterViewInit } from '@angular/core';
+import {Injectable, AfterViewInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Route} from '../model/route';
 import {Observable} from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {LoginResponse} from '../login/login-response.payload';
 import {LocalStorageService} from 'ngx-webstorage';
 import {RouteRequestPayload} from '../../routes/route-find/route-request.payload';
@@ -14,65 +14,63 @@ import {Parcel} from '../model/parcel';
 @Injectable()
 export class RouteService {
 
-  routeUrl: string;
-  depotinfUrl: string;
-  registerParcel: string;
-  userUrl: string;
-  registerTemporaryRoute: string;
+  url: string;
 
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.routeUrl = 'http://localhost:8080/api/routes';
-    this.depotinfUrl = 'http://localhost:8080/api/depots';
-    this.registerParcel = 'http://localhost:8080/api/routes';
-    this.userUrl = 'http://localhost:8080/api/routes/user/';
-    this.registerTemporaryRoute = 'http://localhost:8080/api/routes/tmp';
-
-
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
-   findByUsername(username: string): Observable<Route[]> {
-    return this.http.get<Route[]>('http://localhost:8080/api/routes/' + username + '/user');
+  findByUsername(username: string): Observable<Route[]> {
+    return this.http.get<Route[]>(this.url + '/api/routes/' + username + '/user');
   }
 
   public findAll(): Observable<Route[]> {
-    return this.http.get<Route[]>(this.routeUrl);
+    return this.http.get<Route[]>(this.url + '/api/routes');
   }
 
   public findTemporaryRoutes(): Observable<any> {
-    return this.http.get<Array<Route>>(this.routeUrl + '/tmp');
+    return this.http.get<Array<Route>>(this.url + '/api/routes/tmp');
   }
 
   public findAllDepots(): Observable<Depot[]> {
 
-    return this.http.get<Depot[]>(this.depotinfUrl);
+    return this.http.get<Depot[]>(this.url + '/api/depots');
   }
-  public getCity(): string{
+
+  public getCity(): string {
     return this.localStorage.retrieve('city');
   }
-  public saveTemporary(parcelRoute: Route): Observable<boolean>  {
+
+  public saveTemporary(parcelRoute: Route): Observable<boolean> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic '});
-    return this.http.post<Route>(this.registerTemporaryRoute, parcelRoute, {headers}).pipe(map(data => {
+      Authorization: 'Basic '
+    });
+    return this.http.post<Route>(this.url + '/api/routes/tmp', parcelRoute, {headers}).pipe(map(data => {
       return true;
     }));
   }
-  public save(parcelRoute: Array<Route>): Observable<boolean>  {
+
+  public save(parcelRoute: Array<Route>): Observable<boolean> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic '});
-    return this.http.post<Route>(this.registerParcel, parcelRoute, {headers}).pipe(map(data => {
+      Authorization: 'Basic '
+    });
+    return this.http.post<Route>(this.url + '/api/routes/tmp', parcelRoute, {headers}).pipe(map(data => {
       return true;
     }));
   }
+
   getAllRoutesByParcelId(id: string): Observable<Array<Route>> {
-      return this.http.get<Array<Route>>('http://localhost:8080/api/routes/' + id + '/parcelId');
+    return this.http.get<Array<Route>>(this.url + '/api/routes/' + id + '/parcelId');
   }
+
   deleteRouteByParcelId(id: string): any {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Basic '});
-    return this.http.post<Route>('http://localhost:8080/api/routes/' + id + '/parcelId', {headers});
+      Authorization: 'Basic '
+    });
+    return this.http.post<Route>(this.url + '/api/routes/' + id + '/parcelId', {headers});
   }
 }

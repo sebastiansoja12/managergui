@@ -28,6 +28,7 @@ export class RouteGetComponent implements OnInit {
   rxTime = new Date();
   intervalId;
   subscription: Subscription;
+  url: string;
 
   constructor(private routeService: RouteService, private parcelService: ParcelService,
               private localStorage: LocalStorageService,
@@ -67,6 +68,7 @@ export class RouteGetComponent implements OnInit {
       .subscribe(time => {
         this.rxTime = time;
       });
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
   getRoute(): any {
@@ -86,13 +88,13 @@ export class RouteGetComponent implements OnInit {
 
   printLabel(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
-    window.location.href = 'http://localhost:8080/api/parcels/' + this.parcel.id + '/label';
+    window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/label';
 
   }
 
   toCSV(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
-    window.location.href = 'http://localhost:8080/api/parcels/' + this.parcel.id + '/csv';
+    window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/csv';
   }
 
   // tslint:disable-next-line:typedef use-lifecycle-interface

@@ -29,19 +29,21 @@ export class AuthService {
     role: this.getRole()
   };
   firstName: string;
+  url: string;
 
   constructor(private httpClient: HttpClient,
               private localStorage: LocalStorageService) {
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<boolean> {
-    return this.httpClient.post('http://localhost:8080/api/users/signup',
+    return this.httpClient.post(this.url + '/api/users/signup',
       signupRequestPayload, { responseType: 'text' }).pipe(map(data => {
       return true;
     }));
   }
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
-    return this.httpClient.post<LoginResponse>('http://localhost:8080/api/users/login',
+    return this.httpClient.post<LoginResponse>(this.url + '/api/users/login',
       loginRequestPayload).pipe(map(data => {
       this.localStorage.store('authenticationToken', data.authenticationToken);
       this.localStorage.store('username', data.username);
@@ -59,7 +61,7 @@ export class AuthService {
       Authorization: 'Basic '
     });
 
-    return this.httpClient.get<User>('http://localhost:8080/api/users/currentuser').pipe(map(data => {
+    return this.httpClient.get<User>(this.url + '/api/users/currentuser').pipe(map(data => {
       this.localStorage.store('username', data.username);
       this.localStorage.store('firstName', data.firstName);
       this.localStorage.store('lastName', data.lastName);
@@ -74,7 +76,7 @@ export class AuthService {
       Authorization: 'Basic '
     });
 
-    return this.httpClient.get<User[]>('http://localhost:8080/api/users/currentuser');
+    return this.httpClient.get<User[]>(this.url + '/api/users/currentuser');
 
   }
 
@@ -103,7 +105,7 @@ export class AuthService {
   }
 
   refreshToken(): any {
-    return this.httpClient.post<LoginResponse>('http://localhost:8080/api/users/refresh/token',
+    return this.httpClient.post<LoginResponse>(this.url + '/api/users/refresh/token',
       this.refreshTokenPayload)
       .pipe(tap(response => {
         this.localStorage.store('role', response.role);
@@ -113,7 +115,7 @@ export class AuthService {
   }
 
   logout(): any {
-    this.httpClient.post('http://localhost:8080/api/users/logout', this.refreshTokenPayload,
+    this.httpClient.post(this.url + '/api/users/logout', this.refreshTokenPayload,
       { responseType: 'text' })
       .subscribe(data => {
         console.log(data);

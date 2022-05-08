@@ -12,18 +12,17 @@ export class UserService {
 
   userUrl: string;
   adminUrl: string;
-
+  url: string;
 
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
+    this.url = 'https://inparcel.herokuapp.com';
     this.userUrl = 'http://localhost:8080/api/users/all';
     this.adminUrl = 'http://localhost:8080/api/users/all/user/';
-
-
   }
 
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get<User[]>(this.url + '/api/users/all');
   }
 
 }
