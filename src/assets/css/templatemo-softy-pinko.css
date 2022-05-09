@@ -644,7 +644,6 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../img/banner-bg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -857,7 +856,6 @@ parallax & home seperator
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url(../img/work-process-bg.png);
   z-index: 2;
   top: -20%;
   left: -20%;
@@ -980,7 +978,6 @@ parallax & home seperator
   width: 140%;
   height: 140%;
   opacity: .90;
-  background-image: url(../img/fun-facts-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

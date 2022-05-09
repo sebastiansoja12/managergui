@@ -4,11 +4,227 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eedc839-49fb-4bd9-b3db-3016671e8b0a" name="Default Changelist" comment="[V2022.3] Exclude node_modules from analyse" />
+    <list default="true" id="8eedc839-49fb-4bd9-b3db-3016671e8b0a" name="Default Changelist" comment="[COUR-9833] Fix payment bug&#10;&#10;[INP-25]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/templatemo-softy-pinko.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/templatemo-softy-pinko.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/172605967_280461163731125_9117628985901613323_n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/about-icon-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/about-icon-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/about-icon-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/blog-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/blog-item-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/blog-item-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/briefcase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/cancel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/caution-sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/chat-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/chat-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/check-mark-green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/check-mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/circle-dec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/coming-soon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/cross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/demo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/deskapp-logo-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/deskapp-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/edge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/featured-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/features-icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/features-icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/forgot-password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/fun-facts-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/icon-Cash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/icon-debit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/icon-online-wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/img_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/internet-explorer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/layout/header-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/layout/sidebar-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/layout/sidebar-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/left-bg-decor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/left-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/login-page-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/menu-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/modal-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/modal-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/modal-img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/new-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/opera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/page-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/parcel_home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/parcelimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/person.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/photo9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/plyr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/product-img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/profile-photo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/register-page-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/right-bg-decor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/right-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/shutterstock_373895764.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/testimonial-author-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/testimonial-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/tick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/upload-file-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/wave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/work-process-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/work-process-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/asc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/banner-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog-item-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/blog-item-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/argon-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/favicon0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/desc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/featured-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/img_3115.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/img_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/left-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/nucleo-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square-purple-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/square6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/testimonial-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/angular.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/bootstrap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/profile-cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/react.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/sketch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/team-1-800x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/team-2-800x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/team-3-800x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/team-4-800x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/theme/vue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/work-process-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/work-process-item-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/banner-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/blue-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/briefcase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/cancel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/caution-sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/chat-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/chat-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/check-mark-green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/check-mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/coming-soon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/cross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/demo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/deskapp-logo-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/deskapp-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/edge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/forgot-password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/internet-explorer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/layout/header-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/layout/sidebar-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/layout/sidebar-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/login-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/login-page-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/logo-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/menu-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/modal-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/modal-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/modal-img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/new-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/opera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/page-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/person.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/photo9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/plyr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/product-img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/profile-photo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/register-page-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/tick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/upload-file-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/images/wave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors/styles/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendors/styles/style.min.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +258,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -49,6 +266,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -64,6 +282,7 @@
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (warehouse-angular)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
       <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
@@ -72,6 +291,7 @@
     <configuration name="E2E Tests (warehouse-angular)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
       <protractor-options value="" />
       <envs />
       <scope-kind value="ALL" />
@@ -90,6 +310,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="heroku-postbuild" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="heroku-postbuild" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.heroku-postbuild" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
