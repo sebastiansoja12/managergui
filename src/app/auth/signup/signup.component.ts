@@ -66,6 +66,8 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayload.depotCode = this.signupForm.get('depotCode').value;
     this.authService.signup(this.signupRequestPayload)
       .subscribe(() => {
+        this.isError = false;
+        window.location.reload();
       }, error => {
         console.log(error);
         this.isError = true;

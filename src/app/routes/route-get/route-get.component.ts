@@ -10,6 +10,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Subscription, throwError, timer} from 'rxjs';
 import {map, share} from 'rxjs/operators';
+import {Supplier} from '../../auth/model/supplier';
+import {SupplierService} from '../../auth/service/supplier.service';
 
 @Component({
   selector: 'app-route-get',
@@ -29,6 +31,12 @@ export class RouteGetComponent implements OnInit {
   intervalId;
   subscription: Subscription;
   url: string;
+  supplierArray: Supplier[];
+
+  createRouteRequestPayload: {
+    id: string;
+    supplierCode: string;
+  };
 
   constructor(private routeService: RouteService, private parcelService: ParcelService,
               private localStorage: LocalStorageService,
@@ -36,13 +44,21 @@ export class RouteGetComponent implements OnInit {
               private parcel: Parcel,
               private route: Route,
               private toastr: ToastrService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private supplierService: SupplierService,
+              private supplier: Supplier) {
+    this.createRouteRequestPayload = {
+      id: '',
+      supplierCode: '',
+    };
+  }
 
   ngOnInit(): void {
     this.getRouteForm = new FormGroup({
       id: new FormControl('', Validators.required),
-      custom: new FormControl('', Validators.required)
+      supplierCode: new FormControl('', Validators.required)
     });
+
     this.routeService.findAll().subscribe(data => {
       this.routes = data;
     });
@@ -53,6 +69,10 @@ export class RouteGetComponent implements OnInit {
 
     this.routeService.findTemporaryRoutes().subscribe(data => {
       this.temporaryRoutesList = data;
+    });
+
+    this.supplierService.findAll().subscribe(data => {
+      this.supplierArray = data;
     });
 
     this.intervalId = setInterval(() => {
@@ -73,7 +93,9 @@ export class RouteGetComponent implements OnInit {
 
   getRoute(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
+    this.supplier.supplierCode = this.getRouteForm.get('supplierCode').value;
     this.route.parcel = this.parcel;
+    this.route.supplier = this.supplier;
     this.routeService.saveTemporary(this.route).subscribe(data => {
       this.isError = false;
     }, error => {

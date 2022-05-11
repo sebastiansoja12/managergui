@@ -44,6 +44,8 @@ import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
+import {Supplier} from './auth/model/supplier';
+import {SupplierService} from './auth/service/supplier.service';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,8 @@ DatePipe,
     Depot,
     Parcel,
     Route,
+    Supplier,
+    SupplierService,
     ParcelService,
     RouteService,
     RouteFormComponent,
