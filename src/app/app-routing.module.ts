@@ -16,30 +16,33 @@ import {IndexComponent} from './pages/index/index.component';
 import {ProfilepageComponent} from './pages/examples/profilepage/profilepage.component';
 import {RegisterpageComponent} from './pages/examples/registerpage/registerpage.component';
 import {LandingpageComponent} from './pages/examples/landingpage/landingpage.component';
+import {ParcelInfoComponent} from './parcels/parcel-info/parcel-info.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfilepageComponent },
-  { path: 'register', component: RegisterpageComponent },
-  { path: 'landing', component: LandingpageComponent },
-  { path: 'sign-up', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'routes', component: RouteListComponent },
-  { path: 'route/parcelCode/:id', component: RouteViewComponent },
-  { path: 'route-find', component: RouteFormComponent },
-  { path: 'parcel/add', component: ParcelAddComponent },
-  { path: 'route-create', component: RouteGetComponent },
-  { path: 'route-delete', component: RouteDeleteComponent },
-  { path: 'user/profile', component: UserProfileComponent },
-  { path: 'depots', component: DepotAllComponent },
-  { path: 'admin/:id', component: AdministratorComponent },
-  { path: 'test', component: IndexComponent }
-
+  {path: '', redirectTo: 'home'},
+  {path: 'home', component: HomeComponent},
+  {path: 'profile', component: ProfilepageComponent},
+  {path: 'register', component: RegisterpageComponent},
+  {path: 'landing', component: LandingpageComponent},
+  {path: 'sign-up', component: SignupComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'routes', component: RouteListComponent},
+  {path: 'route/parcelCode/:id', component: RouteViewComponent},
+  {path: 'route-find', component: RouteFormComponent},
+  {path: 'parcel/add', component: ParcelAddComponent},
+  {path: 'route-create', component: RouteGetComponent},
+  {path: 'route-delete', component: RouteDeleteComponent},
+  {path: 'user/profile', component: UserProfileComponent},
+  {path: 'depots', component: DepotAllComponent},
+  {path: 'admin/:id', component: AdministratorComponent},
+  {path: 'test', component: IndexComponent},
+  {path: 'parcel/information/:id', component: ParcelInfoComponent}
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

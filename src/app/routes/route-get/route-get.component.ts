@@ -71,7 +71,6 @@ export class RouteGetComponent implements OnInit {
 
   getRoute(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
-    this.parcel.custom  =  this.getRouteForm.get('custom').value;
     this.route.parcel = this.parcel;
     this.routeService.saveTemporary(this.route).subscribe(data => {
       this.isError = false;

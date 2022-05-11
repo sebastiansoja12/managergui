@@ -1,17 +1,19 @@
+import {ParcelTypeDetermination} from './enumeration/ParcelTypeDetermination';
+
 
 export class Parcel {
   id: string;
-firstName: string;
-lastName: string;
-   senderTelephone: string;
-    senderEmail: string;
-
+  firstName: string;
+  lastName: string;
+  senderTelephone: string;
+  senderEmail: string;
   recipientTelephone: string;
- recipientCity: string;
-    recipientEmail: string;
-    recipientFirstName: string;
-    recipientLastName: string;
-    recipientStreet: string;
-  custom: boolean;
-
+  recipientCity: string;
+  recipientEmail: string;
+  recipientFirstName: string;
+  recipientLastName: string;
+  recipientStreet: string;
+  recipientPostalCode: string;
+  price: number;
+  parcelType: ParcelTypeDetermination;
 }

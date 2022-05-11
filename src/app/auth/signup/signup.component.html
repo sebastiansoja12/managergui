@@ -5,41 +5,46 @@
         <div class="contact-form">
           <form id="contact" action="" method="post" [formGroup]="signupForm" (ngSubmit)="signup()">
             <div class="center-heading">
-              <p  class="section-title">Moduł rejestracji pracownika</p>
+              <p class="section-title">Moduł rejestracji pracownika</p>
             </div>
             <div class="row">
               <div class="col-md-6 col-lg-6">
                 <fieldset>
                   <div class="user-name">
-                    <input type="text" [formControlName]="'email'" id="email_address" placeholder="E-mail" required="" class="form-control" name="email-address">
+                    <input type="text" [formControlName]="'email'" id="email_address" placeholder="E-mail" required=""
+                           class="form-control" name="email-address">
                   </div>
                 </fieldset>
               </div>
               <div class="col-md-12 col-lg-6">
                 <fieldset>
                   <div class="user-name">
-                    <input type="text" [formControlName]="'username'" class="form-control" placeholder="Nazwa użytkownika" id="username" required="">
+                    <input type="text" [formControlName]="'username'" class="form-control"
+                           placeholder="Nazwa użytkownika" id="username" required="">
                   </div>
                 </fieldset>
               </div>
               <div class="col-md-6 col-lg-6">
                 <fieldset>
                   <div class="user-name">
-                    <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" placeholder="Hasło" required="">
+                    <input type="password" [formControlName]="'password'" id="password" class="form-control"
+                           name="password" placeholder="Hasło" required="">
                   </div>
                 </fieldset>
               </div>
               <div class="col-md-12 col-lg-6">
                 <fieldset>
                   <div class="user-name">
-                    <input type="text" [formControlName]="'firstName'" id="firstName" class="form-control" name="firstName" placeholder="Imie" required="">
+                    <input type="text" [formControlName]="'firstName'" id="firstName" class="form-control"
+                           name="firstName" placeholder="Imie" required="">
                   </div>
                 </fieldset>
               </div>
               <div class="col-md-6 col-lg-12">
                 <fieldset>
                   <div class="user-name">
-                    <input type="text" [formControlName]="'lastName'" id="lastName" class="form-control" name="lastName" placeholder="Nazwisko" required="">
+                    <input type="text" [formControlName]="'lastName'" id="lastName" class="form-control" name="lastName"
+                           placeholder="Nazwisko" required="">
                   </div>
                 </fieldset>
               </div>
