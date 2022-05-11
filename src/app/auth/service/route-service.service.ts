@@ -9,6 +9,7 @@ import {RouteRequestPayload} from '../../routes/route-find/route-request.payload
 import {User} from '../model/user';
 import {Depot} from '../model/depot';
 import {Parcel} from '../model/parcel';
+import {CreateRouteRequestPayload} from '../../routes/route-get/CreateRouteRequestPayload';
 
 
 @Injectable()

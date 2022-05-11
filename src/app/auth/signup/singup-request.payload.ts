@@ -5,5 +5,5 @@ export interface SignupRequestPayload {
     role: string;
     firstName: string;
     lastName: string;
-  depotCode: any;
+    depotCode: any;
 }
