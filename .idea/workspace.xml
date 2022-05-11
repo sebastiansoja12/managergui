@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eedc839-49fb-4bd9-b3db-3016671e8b0a" name="Default Changelist" comment="[COUR-9833] &#10;&#10;[INP-25]" />
+    <list default="true" id="8eedc839-49fb-4bd9-b3db-3016671e8b0a" name="Default Changelist" comment="[V2022.3] Exclude node_modules from analyse">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +59,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -73,7 +74,6 @@
   <component name="RunManager" selected="npm.heroku-postbuild">
     <configuration name="Tests (warehouse-angular)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
       <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
@@ -82,7 +82,6 @@
     <configuration name="E2E Tests (warehouse-angular)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
-      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
       <protractor-options value="" />
       <envs />
       <scope-kind value="ALL" />
@@ -133,7 +132,6 @@
       <workItem from="1650562325911" duration="891000" />
       <workItem from="1650563353639" duration="19000" />
       <workItem from="1650564702085" duration="1846000" />
-      <workItem from="1652013327871" duration="1180000" />
     </task>
     <task id="LOCAL-00001" summary="[V2022.3] Move files">
       <created>1649618343372</created>

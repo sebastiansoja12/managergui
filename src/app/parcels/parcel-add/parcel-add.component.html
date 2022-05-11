@@ -6,35 +6,37 @@
           <div class="card">
             <div class="card-body">
               <div class="d-grid">
-                <button class="btn btn-primary submit">Zapisz</button>
+                  <button id="form-submit" class="btn btn-primary submit">
+                    Wysyłam
+                    <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+                  </button>
+                <p class="send-failed-text" *ngIf='this.isError' >Nadanie nie powiodło się.</p>
               </div>
               <div class="fm-menu">
-                <a href="javascript:" class="list-group "><i class="bx bx-devices me-2"></i><span>Edytor</span></a>
-                <a href="javascript:" class="list-group "><i class="bx bx-plug me-2"></i><span>Śledzenie</span></a>
-                <a href="javascript:" class="list-group "><i class="bx bx-trash-alt me-2"></i>
-                  <span>Usuwanie przesyłek</span></a>
-                <a href="javascript:" class="list-group "><i class="bx bx-image me-2"></i><span>Etykiety</span></a>
-                <a href="javascript:" class="list-group "><i class="bx bx-beer me-2"></i><span>Podania</span></a>
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card" >
             <div class="card-body">
               <h5 class="mb-0 text-primary font-weight-bold">
                 <div>
                 </div>
               </h5>
-              <p class="mb-0 mt-2"><span class="text-secondary">Wielkość przesyłki</span>
-                <span class="float-end text-primary"></span>
+              <p class="mb-0 mt-2"><span class="text-secondary" >Wielkość przesyłki</span>
+                <span class="float-end text-primary">
+                  <select [formControlName]="'parcelType'" [(ngModel)]="pickedEnumPrice">
+                    <option disabled>Wybierz rozmiar paczki</option>
+                  <option *ngFor="let name of parcelTypes" [value]="name">{{ParcelType2LabelMapping[name]}}</option>
+                  </select>
+                </span>
               </p>
               <div class="progress mt-3" style="height:7px;">
               </div>
-              <div class="mt-3"></div>
+              <div class="mt-3">
+                <h4><p class="mb-3 font-weight-bold">Do zapłaty: {{pickEnum()}} PLN</h4>
+              </div>
               <div class="d-flex align-items-center">
                 <div class="fm-file-box bg-light-primary text-primary"><i class="bx bx-image"></i>
-                </div>
-                <div class="flex-grow-1 ms-2">
-                  <h6 class="mb-0">Liczba przesyłek</h6>
                 </div>
               </div>
             </div>
@@ -116,67 +118,6 @@
                   <input type="text" [formControlName]="'recipientStreet'" placeholder="Ulica" required=""
                          id="street" class="form-control"
                          name="street">
-                </div>
-                <div class="row mt-3">
-                  <div class="col-12 col-lg-4">
-                    <div class="card shadow-none border radius-15">
-                      <div class="card-body">
-                        <div class="d-flex align-items-center">
-                          <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success">
-                            <h2>Paczka najmniejsza</h2>
-                            <p>5cm x 5cm x 5cm</p>
-                          </i>
-                          </div>
-                          <div class="ms-auto font-24">
-                          </div>
-                        </div>
-                        <h5>Zapłacisz: 10 PLN</h5>
-                        <p class="mb-1 mt-4"></p>
-                        <div class="progress" style="height: 7px;">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4">
-                    <div class="card shadow-none border radius-15">
-                      <div class="card-body">
-                        <div class="d-flex align-items-center">
-                          <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success"></i>
-                            <h2>Paczka mała</h2>
-                            <p>10cm x 10cm x 10cm</p>
-                          </div>
-                          <div class="ms-auto font-24">
-                          </div>
-                        </div>
-                        <h5>Zapłacisz: 15 PLN</h5>
-                        <p class="mb-1 mt-4"></p>
-                        <div class="progress" style="height: 7px;">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4">
-                    <div class="card shadow-none border radius-15">
-                      <div class="card-body">
-                        <div class="d-flex align-items-center">
-                          <div class="fm-icon-box radius-15  text-dark"><i class="bx bxs-file-doc text-success"></i>
-                            <h2>Paczka średnia</h2>
-                            <p>30cmx30cmx30cm</p>
-                          </div>
-                          <div class="ms-auto font-24">
-                          </div>
-                        </div>
-                        <h5>Zapłacisz: 20 PLN</h5>
-                        <p class="mb-1 mt-4"></p>
-                        <div class="progress" style="height: 7px;">
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <button type="submit" id="form-submit" class="main-button">Wysyłam</button>
                 </div>
               </div>
             </div>

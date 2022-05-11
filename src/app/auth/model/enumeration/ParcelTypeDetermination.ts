@@ -1,8 +1,8 @@
 export enum ParcelTypeDetermination {
-  TINY,
-  SMALL,
-  MEDIUM,
-  AVERAGE,
-  BIG,
-  CUSTOM
+  TINY = 'TINY',
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  AVERAGE = 'AVERAGE',
+  BIG = 'BIG',
+  CUSTOM = 'CUSTOM'
 }

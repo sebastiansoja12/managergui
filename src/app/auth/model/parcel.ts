@@ -1,4 +1,4 @@
-import {ParcelType} from './parcelType';
+import {ParcelTypeDetermination} from './enumeration/ParcelTypeDetermination';
 
 
 export class Parcel {
@@ -15,6 +15,5 @@ export class Parcel {
   recipientStreet: string;
   recipientPostalCode: string;
   price: number;
-  parcelType: string;
-
+  parcelType: ParcelTypeDetermination;
 }

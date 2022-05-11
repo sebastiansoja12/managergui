@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
+import {throwError} from 'rxjs';
 
 
 @Component({
@@ -17,10 +18,14 @@ export class ParcelAddComponent implements OnInit {
 
 
   createParcelForm: FormGroup;
-  parcelType: ParcelTypeDetermination[];
-  ParcelTypeDetermination = ParcelTypeDetermination;
   enumKeys = [];
-  url: string;
+  response: any;
+  ParcelTypeDetermination: ParcelTypeDetermination;
+  parcelType: ParcelTypeDetermination;
+  public loading: boolean;
+
+
+
   ParcelType2LabelMapping: Record<ParcelTypeDetermination, string> = {
     [ParcelTypeDetermination.TINY]: '5cmx5cm5cm',
     [ParcelTypeDetermination.SMALL]: '10cmx10cmx10cm',
@@ -30,16 +35,19 @@ export class ParcelAddComponent implements OnInit {
     [ParcelTypeDetermination.CUSTOM]: 'XcmXcmXcm'
   };
 
+  pickedEnumPrice: any;
+
   public stateTypes = Object.values(ParcelTypeDetermination).filter(value => typeof value === 'number');
 
   public parcelTypes = Object.values(ParcelTypeDetermination);
+  public isError: boolean;
+
 
   constructor(
     private parcelService: ParcelService, private parcel: Parcel,
     private router: Router, private authService: AuthService, private toastr: ToastrService) {
-    this.enumKeys = Object.keys(this.ParcelTypeDetermination);
-    this.url = 'https://inparcel.herokuapp.com';
   }
+
 
 
   // tslint:disable-next-line:typedef
@@ -58,6 +66,8 @@ export class ParcelAddComponent implements OnInit {
       recipientPostalCode: new FormControl('', Validators.required),
       parcelType: new FormControl('', Validators.required)
     });
+
+    this.response = this.parcelService.getPaymentUrl();
   }
 
   createParcel(): any {
@@ -72,14 +82,46 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.recipientStreet = this.createParcelForm.get('recipientStreet').value;
     this.parcel.recipientEmail = this.createParcelForm.get('recipientEmail').value;
     this.parcel.recipientPostalCode = this.createParcelForm.get('recipientPostalCode').value;
-    this.parcel.parcelType = 'AVERAGE';
-    this.parcelService.save(this.parcel)
-      .subscribe(() => {
-        this.router.navigateByUrl(this.url + '/parcel/information/' + this.parcel.id).then(r => 'xd');
-      }, error => {
-        this.toastr.error('Paczka nie została nadana!');
+    this.parcel.parcelType = this.createParcelForm.get('parcelType').value;
+    this.parcelService.saveParcel(this.parcel)
+      .subscribe(data => {
+        this.isError = false;
+        if (this.parcelService.getPaymentUrl() != null) {
+          window.location.assign(this.parcelService.getPaymentUrl());
+        }
+        }, error => {
+        this.isError = true;
+        throwError(error);
       });
-
   }
 
+  openIfErrorisFalse(): any {
+    if (this.isError === false) {
+      window.open(this.response, this.response);
+    }
+  }
+
+  pickEnum(): number {
+    if (this.pickedEnumPrice === 'TINY') {
+      return 10;
+    }
+    if (this.pickedEnumPrice === 'SMALL') {
+      return 15;
+    }
+    if (this.pickedEnumPrice === 'MEDIUM') {
+      return 20;
+    }
+    if (this.pickedEnumPrice === 'AVERAGE') {
+      return 30;
+    }
+    if (this.pickedEnumPrice === 'BIG') {
+      return 50;
+    }
+    if (this.pickedEnumPrice === 'CUSTOM') {
+      return 70;
+    }
+    else {
+      return 0;
+    }
+  }
 }
