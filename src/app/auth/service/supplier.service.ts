@@ -12,7 +12,7 @@ export class SupplierService {
   url: string;
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.url = 'http://localhost:8080';
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
   public findAll(): Observable<Supplier[]> {
