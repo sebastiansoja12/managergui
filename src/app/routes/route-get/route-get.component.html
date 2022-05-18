@@ -1,14 +1,14 @@
 <div class="route-get-section">
+  <form [formGroup]="getRouteForm" (ngSubmit)="getRoute()">
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-3">
         <div class="card">
           <div class="card-body">
-            <form [formGroup]="getRouteForm" (ngSubmit)="saveTemporaryRoutes()">
               <div class="d-grid">
                 <button class="btn btn-primary submit">Zapisz</button>
+                <p *ngIf="isError" class = "error">Paczka nie została zarejestrowana!</p>
               </div>
-            </form>
 
             <div class="fm-menu">
               <a href="javascript:" class="list-group "><i class="bx bx-devices me-2"></i><span>Edytor</span></a>
@@ -20,7 +20,6 @@
             </div>
           </div>
         </div>
-        <form [formGroup]="getRouteForm" (ngSubmit)="getRoute()">
 
         <div class="card">
           <div class="card-body">
@@ -51,18 +50,16 @@
               <div class="flex-grow-1 ms-2">
                 <h6 class="mb-0">Kurier</h6>
               </div>
-              <h6 class="text-primary mb-0">{{temporaryRoutesList.length}}</h6>
+              <h6 class="text-primary mb-0"></h6>
             </div>
           </div>
         </div>
-        </form>
       </div>
       <div class="col-12 col-lg-9">
         <div class="card">
           <div class="card-body">
             <div class="fm-search">
               <div class="mb-0">
-                <form [formGroup]="getRouteForm" (ngSubmit)="getRoute()">
 
                 <div class="input-group input-group-lg">
                     <div class="col-sm-12 col-lg-12">
@@ -81,11 +78,10 @@
                     </div>
 
                   </div>
-                </form>
 
               </div>
               <div class="row mt-3">
-                <div class="col-12 col-lg-4" (click)=getRoute()>
+                <div class="col-12 col-lg-4">
                   <div class="card shadow-none border radius-15">
                     <div class="card-body">
                       <div class="d-flex align-items-center">
@@ -175,4 +171,5 @@
       </div>
     </div>
   </div>
+  </form>
 </div>
