@@ -46,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
 import {Supplier} from './auth/model/supplier';
 import {SupplierService} from './auth/service/supplier.service';
+import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {SupplierService} from './auth/service/supplier.service';
     AdministratorComponent,
     HeaderComponent,
     FooterComponent,
-    ParcelInfoComponent
+    ParcelInfoComponent,
+    ClientParcelComponent
   ],
   imports: [
     BrowserModule,
