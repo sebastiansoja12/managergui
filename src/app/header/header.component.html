@@ -43,7 +43,6 @@
             aria-expanded="false"
             aria-haspopup="true"
             class="nav-link dropdown-toggle dropdown-toggle"
-            data-toggle="dropdown"
             dropdownToggle
             href="javascript:void(0)"
             id="navbarDropdownMenuLink"
@@ -55,6 +54,9 @@
             class="dropdown-menu"
             *dropdownMenu
           >
+            <a class="dropdown-item" [routerLink]="['/routes']">
+              <i class="tim-icons icon-check-2"></i>Zarejestrowane przesyłki
+            </a>
             <a class="dropdown-item" [routerLink]="['/route-create']">
               <i class="tim-icons icon-app"> </i>Rejestracja przesyłek
             </a>

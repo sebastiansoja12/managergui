@@ -1,3 +1,10 @@
 .parcel-management-section {
   margin-top: 200px;
 }
+.marker-home {
+  display: inline-block;
+  width: 16.3px;
+  height: 13.45px;
+  overflow: hidden;
+  color: white;
+}

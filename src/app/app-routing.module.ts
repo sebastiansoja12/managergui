@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'admin/:id', component: AdministratorComponent},
   {path: 'test', component: IndexComponent},
   {path: 'parcel/information/:id', component: ParcelInfoComponent},
-  {path: 'parcel/client/management', component: ClientParcelComponent}
+  {path: 'parcel/client/management/:id', component: ClientParcelComponent}
 
 ];
 
