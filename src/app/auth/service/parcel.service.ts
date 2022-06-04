@@ -13,25 +13,31 @@ import {Router} from '@angular/router';
 })
 export class ParcelService {
 
+  url: string;
 
   @Output() paymentUrl: EventEmitter<string> = new EventEmitter();
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService,
               private authService: AuthService, private router: Router) {
+    this.url = 'http://localhost:8080/api/';
   }
 
 
   public save(parcel: Parcel): Observable<boolean> {
     const headers = new HttpHeaders().set('Authorization', this.localStorage.retrieve('authenticationToken'));
 
-    return this.http.post('http://localhost:8080/api/parcels', parcel, {responseType: 'text'})
+    return this.http.post(this.url + 'parcels', parcel, {responseType: 'text'})
       .pipe(map(data => {
         return true;
       }));
   }
 
   findPaymentByParcelId(id: string): Observable<PaymentInformation> {
-    return this.http.get<PaymentInformation>('http://localhost:8080/api/payments/' + id);
+    return this.http.get<PaymentInformation>(this.url + 'payments/' + id);
+  }
+
+  findParcelById(id: string): Observable<Parcel> {
+    return this.http.get<Parcel>(this.url + 'parcels/' + id);
   }
 
   public saveParcel(parcel: Parcel): Observable<boolean> {

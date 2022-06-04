@@ -9,6 +9,7 @@ import {RouteRequestPayload} from '../../routes/route-find/route-request.payload
 import {User} from '../model/user';
 import {Depot} from '../model/depot';
 import {Parcel} from '../model/parcel';
+import {CreateRouteRequestPayload} from '../../routes/route-get/CreateRouteRequestPayload';
 
 
 @Injectable()
@@ -50,15 +51,8 @@ export class RouteService {
   public getCity(): string{
     return this.localStorage.retrieve('city');
   }
-  public saveTemporary(parcelRoute: Route): Observable<boolean>  {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Basic '});
-    return this.http.post<Route>(this.registerTemporaryRoute, parcelRoute, {headers}).pipe(map(data => {
-      return true;
-    }));
-  }
-  public save(parcelRoute: Array<Route>): Observable<boolean>  {
+
+  public save(parcelRoute: Route): Observable<boolean>  {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '});

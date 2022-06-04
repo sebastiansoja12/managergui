@@ -44,6 +44,9 @@ import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
+import {Supplier} from './auth/model/supplier';
+import {SupplierService} from './auth/service/supplier.service';
+import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component
     AdministratorComponent,
     HeaderComponent,
     FooterComponent,
-    ParcelInfoComponent
+    ParcelInfoComponent,
+    ClientParcelComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +102,8 @@ DatePipe,
     Depot,
     Parcel,
     Route,
+    Supplier,
+    SupplierService,
     ParcelService,
     RouteService,
     RouteFormComponent,

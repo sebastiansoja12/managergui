@@ -17,6 +17,7 @@ import {ProfilepageComponent} from './pages/examples/profilepage/profilepage.com
 import {RegisterpageComponent} from './pages/examples/registerpage/registerpage.component';
 import {LandingpageComponent} from './pages/examples/landingpage/landingpage.component';
 import {ParcelInfoComponent} from './parcels/parcel-info/parcel-info.component';
+import {ClientParcelComponent} from './parcels/client-parcel/client-parcel.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home'},
@@ -36,7 +37,9 @@ const routes: Routes = [
   {path: 'depots', component: DepotAllComponent},
   {path: 'admin/:id', component: AdministratorComponent},
   {path: 'test', component: IndexComponent},
-  {path: 'parcel/information/:id', component: ParcelInfoComponent}
+  {path: 'parcel/information/:id', component: ParcelInfoComponent},
+  {path: 'parcel/client/management/:id', component: ClientParcelComponent}
+
 ];
 
 

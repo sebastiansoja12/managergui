@@ -1,9 +1,32 @@
 <section class="section" id="testimonials">
-  <div class="container">
+  <div class="alerts" id="alert">
+  <alert
+    class="alert-with-icon"
+    [type]="'success alert-with-icon'"
+    [dismissible]="true"
+    *ngIf="!isError"
+  >
+    <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+    <span>
+      <b> Paczka znaleziona - </b> Poniżej znajduje się trasa Twojej przesyłki
+    </span>
+  </alert>
+  <alert
+      class="alert-with-icon"
+      [type]="'danger alert-with-icon'"
+      [dismissible]="true"
+      *ngIf="isError"
+  >
+      <span class="tim-icons icon-support-17" data-notify="icon"> </span>
+      <span>
+      <b> Paczka nie znaleziona! - </b> Sprawdź numer przesyłki i spróbuj ponownie
+          </span>
+    </alert>
+  </div>
+  <div class="container" *ngIf="!isError">
     <div class="row text-center justify-content-center mb-5">
       <div class="col-xl-auto col-lg-8">
         <h2 class="font-weight-bold">Przesyłka: {{id}}</h2>
-        <p class="text-muted">Trasa Twojej przesyłki</p>
       </div>
     </div>
     <div class="row">
@@ -11,11 +34,10 @@
         <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
           <div class="timeline-step mb-0" *ngFor="let route of routes">
             <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title=""
-                 data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                 data-original-title="2003">
               <div class="inner-circle">{{route.user.depot.depotCode}}</div>
-              <p class="h6 mt-3 mb-1">{{route.user.depot.city}}</p>
-              <p class="h6 mt-3 mb-1">{{route.created}}</p>
-
+              <p class="text-white h6 mt-3 mb-1">{{route.user.depot.city}}</p>
+              <p class="text-white h6 mt-3 mb-1">{{route.created}}</p>
             </div>
           </div>
         </div>
