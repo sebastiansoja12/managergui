@@ -10,27 +10,12 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/register']"> Rejestracja </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/profile']"> Profil </a>
-          </li>
         </ul>
       </div>
       <div class="col-md-3">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">
-              Kontakt
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              O nas
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              Blog
-            </a>
+            <a class="nav-link" [routerLink]="['/profile']"> Profil </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://opensource.org/licenses/MIT">
@@ -39,35 +24,8 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-3">
-        <h3 class="title">Obserwuj nas</h3>
-        <div class="btn-wrapper profile">
-          <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="/"
-            target="_blank"
-          >
-            <i class="fab fa-twitter"> </i>
-          </a>
-          <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="https://gitlab.com/sebastiansoja"
-            target="_blank"
-          >
-            <i class="fab fa-facebook-square"> </i>
-          </a>
-          <a
-            class="btn btn-icon btn-neutral btn-round btn-simple"
-            href="/"
-            target="_blank"
-          >
-            <i class="fab fa-dribbble"> </i>
-          </a>
-        </div>
-      </div>
     </div>
   </div>
-  <!-- Copyright -->
   <div class="text-center p-3">
     2020-2022
   </div>
@@ -75,5 +33,4 @@
     Version:
     <a class="text-white">0.80 Beta</a>
   </div>
-  <!-- Copyright -->
 </footer>

@@ -1,7 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Depot} from '../auth/model/depot';
 import {DepotService} from '../auth/service/depot.service';
-import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-depot-all',
@@ -18,8 +17,7 @@ export class DepotAllComponent implements OnInit {
   isError: boolean;
 
   constructor(
-    private depotService: DepotService, private router: RouterModule
-  ) { }
+    private depotService: DepotService) { }
   ngOnInit(): void {
     this.depotService.findAll().subscribe(data => {
       this.depots = data;
