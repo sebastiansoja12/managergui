@@ -8,7 +8,6 @@ import {RouteViewComponent} from './routes/route-view/route-view.component';
 import {RouteFormComponent} from './routes/route-find/route-form.component';
 import {ParcelAddComponent} from './parcels/parcel-add/parcel-add.component';
 import {RouteGetComponent} from './routes/route-get/route-get.component';
-import {RouteDeleteComponent} from './routes/route-delete/route-delete.component';
 import {UserProfileComponent} from './auth/user-profile/user-profile.component';
 import {DepotAllComponent} from './depot-all/depot-all.component';
 import {AdministratorComponent} from './administrator/administrator.component';
@@ -32,7 +31,6 @@ const routes: Routes = [
   {path: 'route-find', component: RouteFormComponent},
   {path: 'parcel/add', component: ParcelAddComponent},
   {path: 'route-create', component: RouteGetComponent},
-  {path: 'route-delete', component: RouteDeleteComponent},
   {path: 'user/profile', component: UserProfileComponent},
   {path: 'depots', component: DepotAllComponent},
   {path: 'admin/:id', component: AdministratorComponent},

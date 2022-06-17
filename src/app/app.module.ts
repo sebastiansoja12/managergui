@@ -21,7 +21,6 @@ import {Parcel} from './auth/model/parcel';
 import {RouteService} from './auth/service/route-service.service';
 import { RouteGetComponent } from './routes/route-get/route-get.component';
 import {Route} from './auth/model/route';
-import { RouteDeleteComponent } from './routes/route-delete/route-delete.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { DepotAllComponent } from './depot-all/depot-all.component';
 import {Depot} from './auth/model/depot';
@@ -59,7 +58,6 @@ import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.com
     RouteViewComponent,
     ParcelAddComponent,
     RouteGetComponent,
-    RouteDeleteComponent,
     UserProfileComponent,
     DepotAllComponent,
     SideBarComponent,
