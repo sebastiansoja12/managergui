@@ -21,9 +21,7 @@ export class RouteListComponent implements OnInit {
   users: User[];
   username: string;
 
-  constructor(private routeService: RouteService, private authService: AuthService,
-              private localStorage: LocalStorageService,
-              private route: RouterModule) {
+  constructor(private routeService: RouteService, private authService: AuthService) {
   }
 
   // tslint:disable-next-line:typedef

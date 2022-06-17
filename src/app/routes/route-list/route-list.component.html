@@ -2,28 +2,43 @@
     <div class="hello">
          <h1>Przyjęte przesyłki użytkownika {{username}}</h1>
     </div>
-<div class="table-responsive">
-  <table class="table table-striped table-hover table-bordered table-sm ">
+  <table class="table">
     <thead>
     <tr>
-      <th scope="col">Kod paczki</th>
-      <th scope="col">Data wejścia</th>
-      <th scope="col">Miasto</th>
-      <th scope="col">Oddział</th>
-      <th scope="col">Kod kuriera</th>
-      <th scope="col">Usuń</th>
+      <th class="text-center">Kod przesyłki</th>
+      <th>Użytkownik</th>
+      <th>Miasto</th>
+      <th>Oddział</th>
+      <th>Kurier</th>
+      <th class="text-right">Data wejścia</th>
+      <th class="text-right">Akcje</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let route of routes">
-      <td>{{ route.parcel.id }}</td>
-      <td>{{ route.created  }}</td>
-      <td>{{ route.user.depot.city }}</td>
-      <td>{{ route.user.depot.depotCode }}</td>
-      <td>{{ route.supplier.supplierCode }}</td>
-      <td><button (click)="deleteRouteByParcelId(route.parcel.id)" >X</button></td>
+      <td class="text-center"> {{route.parcel.id}}</td>
+      <td>{{route.user.firstName}}</td>
+      <td>{{route.user.depot.city}}</td>
+      <td>{{route.user.depot.depotCode}}</td>
+      <td>{{route.supplier.supplierCode}}</td>
+      <td class="text-right"> {{route.created}}</td>
+      <td class="td-actions text-right">
+        <!-- Information about specific parcel will be implemented in future stories -->
+        <button type="button" rel="tooltip" class="btn btn-info btn-link btn-icon btn-sm">
+          <i class="tim-icons icon-single-02"></i>
+        </button>
+        <!-- Editing will be implemented in future stories -->
+        <button type="button" rel="tooltip" class="btn btn-success btn-link btn-icon btn-sm">
+          <i class="tim-icons icon-settings"></i>
+        </button>
+        <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-icon btn-sm"
+                (click)="deleteRouteByParcelId(route.parcel.id)">
+          <i class="tim-icons icon-simple-remove"></i>
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>
-</div>
 </section>
+
+

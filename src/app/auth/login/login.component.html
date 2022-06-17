@@ -14,17 +14,13 @@
                   class="card-img"
                   src="assets/img/square1-red.png"
                 />
-                <h4 class="card-title">Logowanie</h4>
+                <h4 class="card-title text-white">Logowanie</h4>
               </div>
               <div class="card-body">
                 <form id="contact" action="" method="post" [formGroup]="loginForm" (ngSubmit)="login()">
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus === true }"
-                  >
-                  </div>
-                  <div
-                    class="input-group"
                   >
                     <div class="input-group-prepend">
                       <div class="input-group-text">
@@ -36,8 +32,8 @@
                       placeholder="Nazwa użytkownika"
                       type="text"
                       [formControlName]="'username'"
-                      (focus)="focus1 = true"
-                      (blur)="focus1 = false"
+                      (focus)="focus = true"
+                      (blur)="focus = false"
                     />
                   </div>
                   <div
