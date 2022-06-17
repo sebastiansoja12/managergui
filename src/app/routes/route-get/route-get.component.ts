@@ -51,6 +51,7 @@ export class RouteGetComponent implements OnInit {
       id: '',
       supplierCode: '',
     };
+    this.url = ' http://localhost:8080';
   }
 
   ngOnInit(): void {
