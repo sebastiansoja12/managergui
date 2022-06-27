@@ -221,8 +221,12 @@
   max-height: 999px;
   padding: 0;
   color: $white;
-  position: relative;
+  position: center;
   overflow: hidden;
+  margin-top: -100px;
+  margin-bottom: -150px;
+  margin-left: -100px;
+
 
   .page-header-image {
     position: absolute;
