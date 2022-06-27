@@ -1,13 +1,7 @@
 <div class="welcome-area" id="welcome">
-  <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square6"></div>
-    <div class="squares square7"></div>
     <div class="col-lg-6 mb-lg-auto">
+      <img class="dots" src="assets/img/dots.png"  alt=""/>
+      <img class="path" src="assets/img/path4.png"  alt=""/>
       <div class="card card-register">
         <div class="card-header">
           <img
@@ -15,12 +9,14 @@
             class="card-img"
             src="../../../assets/img/square1-red.png"
           />
-
           <h4 class="card-title">Znajdź przesyłkę</h4>
         </div>
         <div class="card-body">
           <form [formGroup]="parcelFindForm" (ngSubmit)="findParcel()" >
-            <div class="input-group">
+            <div class="input-group"
+                 [ngClass]="{ 'input-group-focus': focus === true }"
+            >
+
               <div class="input-group-prepend">
                 <div class="input-group-text">
                   <i class="tim-icons icon-app"> </i>
@@ -31,7 +27,8 @@
                 placeholder="Wpisz kod przesyłki"
                 type="text" [formControlName]="'id'"
                 name="name"
-                required=""
+                (focus)="focus = true"
+                (blur)="focus = false"
               />
             </div>
             <div class="card-footer">
@@ -45,5 +42,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

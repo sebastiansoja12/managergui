@@ -10,7 +10,18 @@
                     Wysyłam
                     <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
                   </button>
-                <p class="send-failed-text" *ngIf='this.isError' >Nadanie nie powiodło się.</p>
+                <alert
+                  class="alert-with-icon"
+                  [type]="'warning alert-with-icon'"
+                  [dismissible]="true"
+                  *ngIf="isError"
+                >
+                  <span class="tim-icons icon-bulb-63" data-notify="icon"> </span>
+                  <span>
+                      <b> Błąd! - </b> Paczka nie została utworzona.
+                      Sprawdź poprawność danych i spróbuj ponownie.
+                    </span>
+                </alert>
               </div>
               <div class="fm-menu">
               </div>
@@ -45,79 +56,133 @@
         <div class="col-12 col-lg-9">
           <div class="card">
             <div class="card-body">
-              <div class="fm-search">
-                <div class="mb-0">
-                  <h2 class="section-title">Dane nadawcy </h2>
-                  <div class="input-group input-group-lg">
-                    <div class="col-sm-12 col-lg-12">
-                      <div class="input-group">
-                        <input type="text" [formControlName]="'firstName'" id="firstName"
-                               class="form-control"
-                               name="firstName"
-                               placeholder="Imię" required="">
-                        <input type="text" [formControlName]="'lastName'" id="lastName"
-                               class="form-control" name="lastName"
-                               placeholder="Nazwisko" required="">
-                      </div>
+              <h1>Dane nadawcy</h1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Imię </label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        required=""
+                        [formControlName]="'firstName'"
+                        id="firstName"
+                      />
                     </div>
-                    <div class="col-sm-12 col-lg-12">
-                      <div class="input-group">
-                        <input type="text" [formControlName]="'senderEmail'"
-                               placeholder="Email nadawcy" required=""
-                               id="email" class="form-control" name="email">
-                        <input type="text" [formControlName]="'senderTelephone'"
-                               placeholder="Telefon nadawcy" required=""
-                               id="sender_telephone" class="form-control"
-                               name="sender_telephone">
-                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Nazwisko </label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        [formControlName]="'lastName'"
+                        id="lastName"
+                      />
                     </div>
                   </div>
                 </div>
-                <h2 class="section-title">Dane odbiorcy </h2>
-                <div class="input-group input-group-lg">
-                  <div class="col-sm-12 col-lg-12">
-                    <div class="input-group">
-                      <input name="recipientFirstName" type="text" [formControlName]="'recipientFirstName'"
-                             id="recipientFirstName"
-                             class="form-control"
-                             placeholder="Imię" required="">
-                      <input name="recipientLastName" type="text" [formControlName]="'recipientLastName'"
-                             placeholder="Nazwisko" required=""
-                             class="form-control"
-                             id="recipientLastName">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Telefon </label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        [formControlName]="'senderTelephone'"
+                      />
                     </div>
                   </div>
-                  <div class="col-sm-12 col-lg-12">
-                    <div class="input-group">
-                      <input name="recipientEmail" type="text" [formControlName]="'recipientEmail'"
-                             placeholder="Email odbiorcy"
-                             class="form-control"
-                             required="" id="recipientEmail">
-
-                      <input type="text" [formControlName]="'recipientTelephone'"
-                             placeholder="Telefon odbiorcy" required=""
-                             class="form-control"
-                             name="recipientTelephone"
-                             id="recipientTelephone">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label> Email </label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        [formControlName]="'senderEmail'"
+                      />
                     </div>
                   </div>
                 </div>
-                <div class="input-group input-group-lg">
-                  <div class="col-sm-12 col-lg-12">
-                    <div class="input-group">
-                      <input type="text" [formControlName]="'recipientCity'" placeholder="Miasto" required=""
-                             class="form-control" name="recipientCity"
-                             id="recipientCity">
-                      <input type="text" [formControlName]="'recipientPostalCode'" placeholder="Kod pocztowy"
-                             id="postalCode" class="form-control"
-                             name="postalCode">
-                    </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h1>Dane odbiorcy</h1>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Imię </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientFirstName'"
+                    />
                   </div>
                 </div>
-                <div class="col-sm-12 col-lg-12">
-                  <input type="text" [formControlName]="'recipientStreet'" placeholder="Ulica" required=""
-                         id="street" class="form-control"
-                         name="street">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Nazwisko </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientLastName'"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Telefon </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientTelephone'"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Email </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientEmail'"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Miasto </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientCity'"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Kod pocztowy </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientPostalCode'"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label> Ulica </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientStreet'"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,3 +192,4 @@
     </div>
   </form>
 </div>
+

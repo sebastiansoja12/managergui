@@ -23,6 +23,7 @@ export class ParcelAddComponent implements OnInit {
   ParcelTypeDetermination: ParcelTypeDetermination;
   parcelType: ParcelTypeDetermination;
   public loading: boolean;
+  isCollapsed = true;
 
 
 
@@ -67,6 +68,9 @@ export class ParcelAddComponent implements OnInit {
     });
 
     this.response = this.parcelService.getPaymentUrl();
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('profile-page');
   }
 
   createParcel(): any {

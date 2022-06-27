@@ -19,8 +19,9 @@ export class RouteFormComponent implements OnInit {
 
   routes: Array<Route>;
   parcelFindForm: FormGroup;
- dss: string;
-id: string;
+  dss: string;
+  id: string;
+  focus;
   @Output() parseParcelId: EventEmitter<string> = new EventEmitter();
 
   isError: boolean;
