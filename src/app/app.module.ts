@@ -39,7 +39,6 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
@@ -86,8 +85,7 @@ import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.com
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    ReactiveFormsModule,
-    PagesModule
+    ReactiveFormsModule
 
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' },

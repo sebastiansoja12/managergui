@@ -1,10 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import { AuthService } from '../auth/service/auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LoginRequestPayload} from '../auth/login/login-request.payload';
-import {ToastrService} from 'ngx-toastr';
-import {throwError} from 'rxjs';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -42,6 +38,7 @@ export class HeaderComponent implements OnInit {
     this.firstName = this.authService.getFirstName();
   }
 
+  // tslint:disable-next-line:typedef
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;
