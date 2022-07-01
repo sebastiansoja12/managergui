@@ -35,6 +35,10 @@ export class ParcelService {
     return this.http.get<PaymentInformation>(this.url + '/api/payments/' + id);
   }
 
+  findParcelById(id: string): Observable<Parcel> {
+    return this.http.get<Parcel>(this.url + '/api/parcels/' + id);
+  }
+
   public saveParcel(parcel: Parcel): Observable<boolean> {
     return this.http.post(this.url + '/api/parcels', parcel, {responseType: 'text'})
       .pipe(map(data => {
