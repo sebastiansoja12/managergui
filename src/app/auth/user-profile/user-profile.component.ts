@@ -17,22 +17,25 @@ export class UserProfileComponent implements OnInit {
   firstName: string;
   city: string;
   username: string;
+  isCollapsed = true;
+
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
     this.authService.getCurrentLoggedInUser().subscribe(data => {
-   this.users = data;
+      this.users = data;
     });
-   /* this.email = this.authService.getEmail();
-    this.firstName = this.authService.getFirstName();
-    this.depotCode = this.authService.getDepotCode();
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('profile-page');
     this.username = this.authService.getUserName();
-    this.city = this.authService.getCity();
-*/
-
-
   }
 
-}
+  // tslint:disable-next-line:use-lifecycle-interface
+    ngOnDestroy(): any {
+      const body = document.getElementsByTagName('body')[0];
+      body.classList.remove('profile-page');
+    }
+  }
+

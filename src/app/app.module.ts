@@ -21,7 +21,6 @@ import {Parcel} from './auth/model/parcel';
 import {RouteService} from './auth/service/route-service.service';
 import { RouteGetComponent } from './routes/route-get/route-get.component';
 import {Route} from './auth/model/route';
-import { RouteDeleteComponent } from './routes/route-delete/route-delete.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { DepotAllComponent } from './depot-all/depot-all.component';
 import {Depot} from './auth/model/depot';
@@ -40,12 +39,12 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import {PagesModule} from './pages/pages.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component';
 import {Supplier} from './auth/model/supplier';
 import {SupplierService} from './auth/service/supplier.service';
+import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.component';
 
 @NgModule({
   declarations: [
@@ -58,14 +57,14 @@ import {SupplierService} from './auth/service/supplier.service';
     RouteViewComponent,
     ParcelAddComponent,
     RouteGetComponent,
-    RouteDeleteComponent,
     UserProfileComponent,
     DepotAllComponent,
     SideBarComponent,
     AdministratorComponent,
     HeaderComponent,
     FooterComponent,
-    ParcelInfoComponent
+    ParcelInfoComponent,
+    ClientParcelComponent
   ],
   imports: [
     BrowserModule,
@@ -86,8 +85,7 @@ import {SupplierService} from './auth/service/supplier.service';
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    ReactiveFormsModule,
-    PagesModule
+    ReactiveFormsModule
 
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' },

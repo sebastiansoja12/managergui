@@ -1,24 +1,29 @@
 <section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-           data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
-           *ngFor="let depot of depots">
-        <div class="card">
-        <div class="features-item">
-          <div class="features-icon">
-            <h2>{{depot.depotCode}}</h2>
-            <img src="/assets/images/features-icon-2.png" alt="">
-            <h4 style="color: white">{{depot.city}}, {{depot.country}}</h4>
-            <p>{{depot.street}}</p>
-            <a href="" class="main-button">
-              Kontakt
-            </a>
+  <div class="information">
+    <h1>Nasze oddziały</h1>
+  </div>
+  <div class="row">
+  <div class="col-md-3" *ngFor="let depot of depots">
+    <div class="card card-coin card-plain">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h4 class="text-uppercase">{{depot.city}}</h4>
+            <hr class="line-info" />
           </div>
         </div>
+        <div class="row">
+          <ul class="list-group">
+            <li class="list-group-item">{{depot.street}}</li>
+            <li class="list-group-item">{{depot.country}}</li>
+          </ul>
         </div>
       </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-info btn-simple">Kontakt</button>
       </div>
     </div>
+  </div>
+  </div>
 </section>
 

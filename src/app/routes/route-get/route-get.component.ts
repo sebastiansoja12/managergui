@@ -30,8 +30,8 @@ export class RouteGetComponent implements OnInit {
   rxTime = new Date();
   intervalId;
   subscription: Subscription;
-  url: string;
   supplierArray: Supplier[];
+  url: string;
 
   createRouteRequestPayload: {
     id: string;
@@ -51,6 +51,7 @@ export class RouteGetComponent implements OnInit {
       id: '',
       supplierCode: '',
     };
+    this.url = ' http://inparcel.herokuapp.com';
   }
 
   ngOnInit(): void {
@@ -88,7 +89,6 @@ export class RouteGetComponent implements OnInit {
       .subscribe(time => {
         this.rxTime = time;
       });
-    this.url = 'https://inparcel.herokuapp.com';
   }
 
   getRoute(): any {
@@ -96,14 +96,12 @@ export class RouteGetComponent implements OnInit {
     this.supplier.supplierCode = this.getRouteForm.get('supplierCode').value;
     this.route.parcel = this.parcel;
     this.route.supplier = this.supplier;
-    this.routeService.saveTemporary(this.route).subscribe(data => {
+    this.routeService.save(this.route).subscribe(data => {
       this.isError = false;
     }, error => {
       this.isError = true;
-      window.location.assign('/');
       this.toastr.success('Błędny kod lub paczka została już zarejestrowana');
       throwError(error);
-
     });
     window.location.reload();
   }
@@ -125,17 +123,5 @@ export class RouteGetComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  }
-  saveTemporaryRoutes(): any {
-    this.routeService.save(this.temporaryRoutesList).subscribe(data => {
-      this.isError = false;
-    }, error => {
-      this.isError = true;
-      window.location.assign('/');
-      this.toastr.success('Błąd!');
-      throwError(error);
-
-    });
-    window.location.reload();
   }
 }

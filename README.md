@@ -1,27 +1,73 @@
-# WarehouseAngular
+INPARCEL ANGULAR APPLICATION 1.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+This is a GUI project for courier parcels system with Angular 13+. 
+It contains all of the specs from Angular's test guide as well as some extras. 
 
-## Development server
+> Get Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Clone the repo
 
-## Code scaffolding
+ `git clone git@gitlab.com:sebastiansoja/warehouse-web-app-fr.git`
+ 
+ `cd warehouse-web-app-fr`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Install npm packages
 
-## Build
+`npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm start` 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The npm start command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files, and runs server on port 4200.
 
-## Running end-to-end tests
+Shut it down manually with Ctrl-C.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+<details><summary>
+3. npm scripts</summary>
+These are the most useful commands defined in package.json:
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- npm start - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+- npm run build - runs the TypeScript compiler and asset copier once.
+- npm run build:watch - runs the TypeScript compiler and asset copier in "watch mode"; when changes occur to source files, 
+  they will be recompiled  or copied into dist/.
+- npm run lint - runs tslint on the project files.
+- npm run serve - runs server.
+
+1.  These are the test-related scripts:
+- npm test - builds the application and runs Intern tests (both unit and functional) one time.
+- npm run ci - cleans, lints, and builds the application and runs Intern tests (both unit and functional) one time.
+</details>
+
+
+> Overview
+
+- Home screen
+![](screenshots/home_screen.png)
+
+- Parcel add screen
+![](screenshots/parcel_add.png)
+
+- Logging page
+![](screenshots/logging_page.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Frontend was created using https://www.creative-tim.com/ templates.**

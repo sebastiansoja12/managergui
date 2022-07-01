@@ -1,16 +1,65 @@
-<div class="user-section">
-  <div class="container">
-    <div class="card">
-      <img src="" alt="Avatar" >
-      <div class="container" *ngFor="let user of users">
-        <h4><b><em>{{user.firstName}} {{user.lastName}}</em></b></h4>
-        <p> {{user.username}}</p>
-        <p> {{user.email}}</p>
-        <p>Oddział {{user.depot.depotCode}}</p>
-        <p><b>{{user.depot.city}}</b></p>
+<div class="page-header">
+  <div class="container align-items-center" *ngFor="let info of users">
+    <div class="row">
+      <div class="col-lg-auto col-md-auto">
+        <h1 class="profile-title text-left"></h1>
+        <h5 class="text-on-back">{{info.username}}</h5>
+        <p class="profile-description">
+        </p>
+      </div>
+      <div class="col-lg-auto col-md-auto">
+        <div class="card card-coin card-plain">
+          <div class="card-body">
+            <h4 class="title">{{info.firstName}} {{info.lastName}}</h4>
+            <tabset
+              class="nav-tabs-danger justify-content-center tab-subcategories"
+            >
+              <tab heading="Profil">
+                <div class="table-responsive">
+                  <table class="table tablesorter" id="plain-table">
+                    <thead class="text-danger">
+                    <tr>
+                      <th class="header">Imię</th>
+                      <th class="header">Nazwisko</th>
+                      <th class="header">E-mail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>{{info.firstName}}</td>
+                      <td>{{info.lastName}}</td>
+                      <td>{{info.email}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </tab>
+              <tab heading="Departament">
+                <div class="table-responsive">
+                  <table class="table tablesorter">
+                    <thead class="text-danger">
+                    <tr>
+                      <th class="header">Oddział</th>
+                      <th class="header">Miasto</th>
+                      <th class="header">Ulica</th>
+                      <th class="header">Kraj</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>{{info.depot.depotCode}}</td>
+                      <td>{{info.depot.city}}</td>
+                      <td>{{info.depot.street}}</td>
+                      <td>{{info.depot.country}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </tab>
+            </tabset>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-

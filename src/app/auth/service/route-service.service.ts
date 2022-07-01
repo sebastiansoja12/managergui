@@ -1,8 +1,8 @@
-import {Injectable, AfterViewInit} from '@angular/core';
+import { Injectable, AfterViewInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Route} from '../model/route';
 import {Observable} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import {LoginResponse} from '../login/login-response.payload';
 import {LocalStorageService} from 'ngx-webstorage';
 import {RouteRequestPayload} from '../../routes/route-find/route-request.payload';
@@ -42,18 +42,7 @@ export class RouteService {
   public getCity(): string {
     return this.localStorage.retrieve('city');
   }
-
-  public saveTemporary(parcelRoute: Route): Observable<boolean> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Basic '
-    });
-    return this.http.post<Route>(this.url + '/api/routes/tmp', parcelRoute, {headers}).pipe(map(data => {
-      return true;
-    }));
-  }
-
-  public save(parcelRoute: Array<Route>): Observable<boolean> {
+  public save(parcelRoute: Array<Route>): Observable<boolean>  {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '

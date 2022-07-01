@@ -1,10 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import { AuthService } from '../auth/service/auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LoginRequestPayload} from '../auth/login/login-request.payload';
-import {ToastrService} from 'ngx-toastr';
-import {throwError} from 'rxjs';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -16,15 +12,14 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
   role: string;
-  isLoggedInAsAdmin: boolean;
   isNull: boolean;
   isAdmin: boolean;
   isCollapsed = true;
   focus;
   focus1;
   focus2;
-  registerSuccessMessage: string;
   isError: boolean;
+  firstName: string;
 
 
   constructor(private authService: AuthService, private router: Router) {
@@ -40,8 +35,10 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.isAdmin = this.authService.isAdmin();
     this.username = this.authService.getUserName();
+    this.firstName = this.authService.getFirstName();
   }
 
+  // tslint:disable-next-line:typedef
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;
