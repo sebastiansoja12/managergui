@@ -42,7 +42,7 @@ export class RouteService {
   public getCity(): string {
     return this.localStorage.retrieve('city');
   }
-  public save(parcelRoute: Array<Route>): Observable<boolean>  {
+  public save(parcelRoute: Route): Observable<boolean>  {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '
