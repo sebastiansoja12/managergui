@@ -68,10 +68,6 @@ export class RouteGetComponent implements OnInit {
       this.routesList = data;
     });
 
-    this.routeService.findTemporaryRoutes().subscribe(data => {
-      this.temporaryRoutesList = data;
-    });
-
     this.supplierService.findAll().subscribe(data => {
       this.supplierArray = data;
     });

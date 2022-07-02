@@ -30,12 +30,7 @@ export class RouteService {
     return this.http.get<Route[]>(this.url + '/api/routes');
   }
 
-  public findTemporaryRoutes(): Observable<any> {
-    return this.http.get<Array<Route>>(this.url + '/api/routes/tmp');
-  }
-
   public findAllDepots(): Observable<Depot[]> {
-
     return this.http.get<Depot[]>(this.url + '/api/depots');
   }
 
@@ -47,7 +42,7 @@ export class RouteService {
       'Content-Type': 'application/json',
       Authorization: 'Basic '
     });
-    return this.http.post<Route>(this.url + '/api/routes/tmp', parcelRoute, {headers}).pipe(map(data => {
+    return this.http.post<Route>(this.url + '/api/routes', parcelRoute, {headers}).pipe(map(data => {
       return true;
     }));
   }
