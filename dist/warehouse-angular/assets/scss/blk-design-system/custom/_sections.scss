@@ -99,7 +99,6 @@
   .square-1 {
     height: 300px;
     width: 300px;
-    background-image: url("/assets/img/square1.png");
     top: 80px;
     left: 100px;
     opacity: 0.3;
@@ -109,7 +108,6 @@
   .square-2 {
     height: 200px;
     width: 200px;
-    background: url("/assets/img/square3.png");
     background-size: cover;
     bottom: 40px;
     left: 600px;
@@ -120,7 +118,6 @@
   .square-3 {
     height: 100px;
     width: 100px;
-    background: url("/assets/img/square2.png");
     background-size: cover;
     top: 300px;
     left: 700px;
@@ -130,7 +127,6 @@
   .square-4 {
     height: 250px;
     width: 250px;
-    background: url("/assets/img/square3.png");
     background-size: cover;
     top: 0px;
     right: 100px;
@@ -221,12 +217,8 @@
   max-height: 999px;
   padding: 0;
   color: $white;
-  position: center;
+  position: relative;
   overflow: hidden;
-  margin-top: -100px;
-  margin-bottom: -150px;
-  margin-left: -100px;
-
 
   .page-header-image {
     position: absolute;
@@ -732,12 +724,12 @@
 
   //inputs
   @include input-coloured-bg(
-    $opacity-5,
-    $white,
-    $white,
-    $transparent-bg,
-    $opacity-1,
-    $opacity-2
+      $opacity-5,
+      $white,
+      $white,
+      $transparent-bg,
+      $opacity-1,
+      $opacity-2
   );
 
   .input-group-text,

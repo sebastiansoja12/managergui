@@ -1,20 +1,9 @@
 .footer {
-  padding: 1px 0;
-  display:block;
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 24px;
-  height: 0;
-  text-align: center;
-
-  [class*="container-"] {
-    padding: 0;
-  }
-
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  height: 10px;
+  border-top: 2px solid $danger;
   .nav {
     display: block;
     float: left;
