@@ -51,7 +51,7 @@ export class RouteGetComponent implements OnInit {
       id: '',
       supplierCode: '',
     };
-    this.url = ' http://inparcel.herokuapp.com';
+    this.url = 'https://inparcel.herokuapp.com';
   }
 
   ngOnInit(): void {
