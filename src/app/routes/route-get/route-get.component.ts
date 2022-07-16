@@ -32,6 +32,7 @@ export class RouteGetComponent implements OnInit {
   subscription: Subscription;
   supplierArray: Supplier[];
   url: string;
+  parcelId: string;
 
   createRouteRequestPayload: {
     id: string;
@@ -66,10 +67,6 @@ export class RouteGetComponent implements OnInit {
 
     this.routeService.findAll().subscribe(data => {
       this.routesList = data;
-    });
-
-    this.routeService.findTemporaryRoutes().subscribe(data => {
-      this.temporaryRoutesList = data;
     });
 
     this.supplierService.findAll().subscribe(data => {
@@ -123,5 +120,9 @@ export class RouteGetComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+  deleteRoute(): void {
+    this.parcel.id = this.getRouteForm.get('id').value;
+    this.routeService.deleteRouteByParcelId(this.parcel.id);
   }
 }

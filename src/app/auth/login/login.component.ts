@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   focus2;
   loginForm: FormGroup;
   loginRequestPayload: LoginRequestPayload;
-  registerSuccessMessage: string;
   isError: boolean;
 
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute,
@@ -124,7 +123,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginRequestPayload).subscribe(data => {
         this.isError = false;
         if (this.authService.isAdmin() === true) {
-          window.location.assign('/admin/routes/inparcel-admin');
+          window.location.assign('/admin/routes/' + this.authService.getUserName());
         } else {
           window.location.assign('routes');
         }

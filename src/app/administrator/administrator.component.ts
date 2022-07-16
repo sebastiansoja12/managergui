@@ -48,7 +48,7 @@ export class AdministratorComponent implements OnInit {
   }
 
   setUsername(value): any{
-    window.location.assign('/admin/routes/all/' + value);
+    window.location.assign('/admin/routes/' + value);
 
   }
 
