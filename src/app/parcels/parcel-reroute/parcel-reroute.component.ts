@@ -29,14 +29,6 @@ export class ParcelRerouteComponent implements OnInit {
     this.paymentRoute = this.activatedRoute.params.subscribe(params => {
       this.id = params.id;
     });
-    this.parcelService.findPaymentByParcelId(this.id).subscribe(data => {
-      this.payment = data;
-    }, error => {
-      this.isError = true;
-      throwError(error);
-      this.message = 'Paczka o id: ' + this.id + ' nie została znaleziona.\n' +
-        'Sprawdź numer swojej przesyłki i spróbuj ponownie';
-    });
     this.parcelService.findParcelById(this.id).subscribe(data => {
       this.parcel = data;
     }, error => {
@@ -45,26 +37,40 @@ export class ParcelRerouteComponent implements OnInit {
       this.message = 'Paczka o id: ' + this.id + ' nie została znaleziona.\n' +
         'Sprawdź numer swojej przesyłki i spróbuj ponownie';
     });
-    if (this.payment.parcelStatus === ParcelStatus.NOT_PAID.toString()) {
-      this.ifPaid = 'Nieopłacone';
-    }
-    if (this.payment.parcelStatus === ParcelStatus.PAID.toString()) {
-      this.ifPaid = 'Opłacone';
-    }
 
     this.createParcelRerouteForm = new FormGroup({
-      firstName: new FormControl(this.parcel.firstName, Validators.required),
-      lastName: new FormControl(this.parcel.lastName, Validators.required),
-      senderTelephone: new FormControl(this.parcel.senderTelephone, Validators.required),
-      senderEmail: new FormControl(this.parcel.senderEmail, Validators.required),
-      recipientFirstName: new FormControl(this.parcel.recipientFirstName, Validators.required),
-      recipientLastName: new FormControl(this.parcel.recipientLastName, Validators.required),
-      recipientTelephone: new FormControl(this.parcel.recipientTelephone, Validators.required),
-      recipientCity: new FormControl(this.parcel.recipientCity, Validators.required),
-      recipientStreet: new FormControl(this.parcel.recipientStreet, Validators.required),
-      recipientEmail: new FormControl(this.parcel.recipientEmail, Validators.required),
-      recipientPostalCode: new FormControl(this.parcel.recipientPostalCode, Validators.required),
-      parcelType: new FormControl(this.parcel.parcelType, Validators.required)
+      firstName: new FormControl(this.parcel.firstName, Validators.maxLength(12)),
+      lastName: new FormControl(this.parcel.lastName, Validators.maxLength(12)),
+      senderTelephone: new FormControl(this.parcel.senderTelephone, Validators.maxLength(9)),
+      senderEmail: new FormControl(this.parcel.senderEmail, Validators.maxLength(12)),
+      recipientFirstName: new FormControl(this.parcel.recipientFirstName, Validators.maxLength(12)),
+      recipientLastName: new FormControl(this.parcel.recipientLastName, Validators.maxLength(12)),
+      recipientTelephone: new FormControl(this.parcel.recipientTelephone, Validators.maxLength(9)),
+      recipientCity: new FormControl(this.parcel.recipientCity, Validators.maxLength(12)),
+      recipientStreet: new FormControl(this.parcel.recipientStreet, Validators.maxLength(12)),
+      recipientEmail: new FormControl(this.parcel.recipientEmail, Validators.maxLength(12)),
+      recipientPostalCode: new FormControl('' + this.parcel.recipientPostalCode, Validators.required),
     });
+  }
+
+  updateParcel(): any {
+    this.parcel.firstName = this.createParcelRerouteForm.get('firstName').value;
+    this.parcel.lastName = this.createParcelRerouteForm.get('lastName').value;
+    this.parcel.senderTelephone = this.createParcelRerouteForm.get('senderTelephone').value;
+    this.parcel.senderEmail = this.createParcelRerouteForm.get('senderEmail').value;
+    this.parcel.recipientFirstName = this.createParcelRerouteForm.get('recipientFirstName').value;
+    this.parcel.recipientLastName = this.createParcelRerouteForm.get('recipientLastName').value;
+    this.parcel.recipientTelephone = this.createParcelRerouteForm.get('recipientTelephone').value;
+    this.parcel.recipientCity = this.createParcelRerouteForm.get('recipientCity').value;
+    this.parcel.recipientStreet = this.createParcelRerouteForm.get('recipientStreet').value;
+    this.parcel.recipientEmail = this.createParcelRerouteForm.get('recipientEmail').value;
+    this.parcel.recipientPostalCode = this.createParcelRerouteForm.get('recipientPostalCode').value;
+    this.parcelService.updateParcel(this.parcel)
+      .subscribe(data => {
+        this.isError = false;
+      }, error => {
+        this.isError = true;
+        throwError(error);
+      });
   }
 }

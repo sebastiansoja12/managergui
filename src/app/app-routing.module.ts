@@ -13,6 +13,7 @@ import {DepotAllComponent} from './depot-all/depot-all.component';
 import {AdministratorComponent} from './administrator/administrator.component';
 import {ParcelInfoComponent} from './parcels/parcel-info/parcel-info.component';
 import {ClientParcelComponent} from './parcels/client-parcel/client-parcel.component';
+import {ParcelRerouteComponent} from './parcels/parcel-reroute/parcel-reroute.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'route/parcelCode/:id', component: RouteViewComponent},
   {path: 'route-find', component: RouteFormComponent},
   {path: 'parcel/add', component: ParcelAddComponent},
+  {path: 'parcel/:id/edit', component: ParcelRerouteComponent},
   {path: 'route-create', component: RouteGetComponent},
   {path: 'user/profile', component: UserProfileComponent},
   {path: 'depots', component: DepotAllComponent},

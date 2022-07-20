@@ -47,6 +47,13 @@ export class ParcelService {
       }));
   }
 
+  public updateParcel(parcel: Parcel): Observable<boolean> {
+    return this.http.put('http://localhost:8080/api/parcels', parcel, {responseType: 'text'})
+      .pipe(map(data => {
+        return true;
+      }));
+  }
+
   getPaymentUrl(): string {
     return this.localStorage.retrieve('paymentUrl');
   }
