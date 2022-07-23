@@ -33,6 +33,7 @@ export class RouteGetComponent implements OnInit {
   supplierArray: Supplier[];
   url: string;
   parcelId: string;
+  id: string;
 
   createRouteRequestPayload: {
     id: string;
@@ -113,6 +114,15 @@ export class RouteGetComponent implements OnInit {
     this.parcel.id  = this.getRouteForm.get('id').value;
     window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/csv';
   }
+  deleteRoute(): any {
+    this.id  = this.getRouteForm.get('id').value;
+    this.route.parcel = this.parcel;
+    this.routeService.deleteRouteByParcelId(this.id).subscribe(() => {
+    }, error => {
+      console.log(error);
+    });
+    window.location.reload();
+  }
 
   // tslint:disable-next-line:typedef use-lifecycle-interface
   ngOnDestroy() {
@@ -120,9 +130,5 @@ export class RouteGetComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  }
-  deleteRoute(): void {
-    this.parcel.id = this.getRouteForm.get('id').value;
-    this.routeService.deleteRouteByParcelId(this.parcel.id);
   }
 }
