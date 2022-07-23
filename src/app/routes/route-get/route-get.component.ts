@@ -32,6 +32,8 @@ export class RouteGetComponent implements OnInit {
   subscription: Subscription;
   supplierArray: Supplier[];
   url: string;
+  parcelId: string;
+  id: string;
 
   createRouteRequestPayload: {
     id: string;
@@ -66,10 +68,6 @@ export class RouteGetComponent implements OnInit {
 
     this.routeService.findAll().subscribe(data => {
       this.routesList = data;
-    });
-
-    this.routeService.findTemporaryRoutes().subscribe(data => {
-      this.temporaryRoutesList = data;
     });
 
     this.supplierService.findAll().subscribe(data => {
@@ -115,6 +113,15 @@ export class RouteGetComponent implements OnInit {
   toCSV(): any {
     this.parcel.id  = this.getRouteForm.get('id').value;
     window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/csv';
+  }
+  deleteRoute(): any {
+    this.id  = this.getRouteForm.get('id').value;
+    this.route.parcel = this.parcel;
+    this.routeService.deleteRouteByParcelId(this.id).subscribe(() => {
+    }, error => {
+      console.log(error);
+    });
+    window.location.reload();
   }
 
   // tslint:disable-next-line:typedef use-lifecycle-interface

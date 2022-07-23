@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'route-create', component: RouteGetComponent},
   {path: 'user/profile', component: UserProfileComponent},
   {path: 'depots', component: DepotAllComponent},
-  {path: 'admin/:id', component: AdministratorComponent},
+  {path: 'admin/routes/:id', component: AdministratorComponent},
   {path: 'parcel/information/:id', component: ParcelInfoComponent},
   {path: 'parcel/client/management/:id', component: ClientParcelComponent}
 

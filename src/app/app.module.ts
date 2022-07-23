@@ -24,7 +24,6 @@ import {Route} from './auth/model/route';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { DepotAllComponent } from './depot-all/depot-all.component';
 import {Depot} from './auth/model/depot';
-import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import {APP_BASE_HREF, DatePipe} from '@angular/common';
 import { AdministratorComponent } from './administrator/administrator.component';
 import {RouterModule} from '@angular/router';
@@ -59,7 +58,6 @@ import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.com
     RouteGetComponent,
     UserProfileComponent,
     DepotAllComponent,
-    SideBarComponent,
     AdministratorComponent,
     HeaderComponent,
     FooterComponent,
