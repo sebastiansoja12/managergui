@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {RouteService} from '../../auth/service/route-service.service';
 import {ParcelService} from '../../auth/service/parcel.service';
@@ -25,14 +25,12 @@ export class RouteGetComponent implements OnInit {
   isError: boolean;
   routes: Route[];
   routesList: Route[];
-  temporaryRoutesList: Route[];
   time = new Date();
   rxTime = new Date();
   intervalId;
   subscription: Subscription;
   supplierArray: Supplier[];
   url: string;
-  parcelId: string;
   id: string;
 
   createRouteRequestPayload: {
@@ -90,7 +88,7 @@ export class RouteGetComponent implements OnInit {
   }
 
   getRoute(): any {
-    this.parcel.id  = this.getRouteForm.get('id').value;
+    this.parcel.id = this.getRouteForm.get('id').value;
     this.supplier.supplierCode = this.getRouteForm.get('supplierCode').value;
     this.route.parcel = this.parcel;
     this.route.supplier = this.supplier;
@@ -101,21 +99,23 @@ export class RouteGetComponent implements OnInit {
       this.toastr.success('Błędny kod lub paczka została już zarejestrowana');
       throwError(error);
     });
-    window.location.reload();
+    this.getRouteForm.reset();
+    // window.location.reload();
   }
 
   printLabel(): any {
-    this.parcel.id  = this.getRouteForm.get('id').value;
+    this.parcel.id = this.getRouteForm.get('id').value;
     window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/label';
 
   }
 
   toCSV(): any {
-    this.parcel.id  = this.getRouteForm.get('id').value;
+    this.parcel.id = this.getRouteForm.get('id').value;
     window.location.href = this.url + '/api/parcels/' + this.parcel.id + '/csv';
   }
+
   deleteRoute(): any {
-    this.id  = this.getRouteForm.get('id').value;
+    this.id = this.getRouteForm.get('id').value;
     this.route.parcel = this.parcel;
     this.routeService.deleteRouteByParcelId(this.id).subscribe(() => {
     }, error => {

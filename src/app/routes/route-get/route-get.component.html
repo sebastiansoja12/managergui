@@ -1,5 +1,16 @@
 <div class="route-get-section">
   <form [formGroup]="getRouteForm" (ngSubmit)="getRoute()">
+    <alert
+      class="alert-with-icon"
+      [type]="'danger alert-with-icon'"
+      [dismissible]="true"
+      *ngIf="isError"
+    >
+      <span class="tim-icons icon-support-17" data-notify="icon"> </span>
+      <span>
+      <b> Paczka nie zarejestrowana! - </b> Sprawdź numer przesyłki i spróbuj ponownie
+      </span>
+    </alert>
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-3">
@@ -7,7 +18,6 @@
           <div class="card-body">
               <div class="d-grid">
                 <button class="btn btn-primary submit">Zarejestruj przesyłkę</button>
-                <p *ngIf="isError" class = "error">Paczka nie została zarejestrowana!</p>
               </div>
           </div>
         </div>
