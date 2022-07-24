@@ -25,7 +25,7 @@ body{margin-top:20px;}
   .timeline-steps .timeline-step:not(:last-child):after {
     content: "";
     display: block;
-    border-top: .25rem dotted #f63b76;
+    border-top: .25rem dotted #ff8d72;
     width: 3.46rem;
     position: absolute;
     left: 7.5rem;
@@ -34,7 +34,7 @@ body{margin-top:20px;}
   .timeline-steps .timeline-step:not(:first-child):before {
     content: "";
     display: block;
-    border-top: .25rem dotted #f63b76;
+    border-top: .25rem dotted #ff8d72;
     width: 3.8125rem;
     position: absolute;
     right: 7.5rem;
@@ -54,11 +54,11 @@ body{margin-top:20px;}
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #f63b76
+  background-color: #ff8d72;
 }
 
 .timeline-steps .timeline-content .inner-circle:before {
-  background-color: #f63b76;
+  background-color: #ff8d72;
   display: inline-flex;
   height: 3rem;
   width: 3rem;

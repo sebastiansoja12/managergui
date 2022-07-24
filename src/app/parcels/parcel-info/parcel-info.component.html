@@ -5,7 +5,7 @@
         <h4><b><em>{{payment.parcel.firstName}} {{payment.parcel.lastName}}</em></b></h4>
         <p> {{payment.parcel.id}}</p>
         <p> Status: {{payment.parcelStatus=="NOT_PAID" ? "Nieopłacone" : "Opłacone" }}</p>
-        <p>Link do płatności: <a href="{{payment.paymentUrl}}">{{payment.paymentUrl}}</a></p>
+        <p>Link do płatności: <a class="text-warning" href="{{payment.paymentUrl}}">{{payment.paymentUrl}}</a></p>
         <p><b>Kwota do zapłaty: {{payment.parcel.price}} PLN</b></p>
       </div>
     </div>
