@@ -30,18 +30,14 @@ export class HomeComponent implements OnInit {
   isError: boolean;
   message: string;
   constructor(private routeService: RouteService, private router: Router) {}
-  scrollToDownload(element: any) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-
   ngOnInit(): any {
     this.parcelFindForm = new FormGroup({
       id: new FormControl('', Validators.required)
     });
-    let body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     body.classList.add('index-page');
 
-    let slider = document.getElementById('sliderRegular');
+    const slider = document.getElementById('sliderRegular');
 
     noUiSlider.create(slider, {
       start: 40,
@@ -52,7 +48,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    let slider2 = document.getElementById('sliderDouble');
+    const slider2 = document.getElementById('sliderDouble');
 
     noUiSlider.create(slider2, {
       start: [20, 60],

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary" *ngIf="isLoggedIn">
+<nav class="navbar navbar-expand-lg bg-dev" *ngIf="isLoggedIn">
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" href="/">
@@ -62,6 +62,9 @@
             </a>
             <a class="dropdown-item" [routerLink]="['/route-find']">
               <i class="tim-icons icon-zoom-split"></i>Śledzenie przesyłek
+            </a>
+            <a class="dropdown-item" [routerLink]="['/parcel/add/']">
+              <i class="tim-icons icon-gift-2"></i>Nadawanie przesyłek
             </a>
             <a class="dropdown-item" [routerLink]="['/sign-up']" *ngIf="isAdmin">
               <i class="tim-icons icon-badge"></i>Rejestracja pracowników
@@ -166,14 +169,29 @@
             <p class="d-lg-none d-xl-none">Oddziały</p>
           </a>
         </li>
-        <li class="nav-item"
-            *ngIf="!isLoggedIn">
+        <li class="nav-item dropdown" dropdown>
           <a
-            class="nav-link"
-            [routerLink]="['/login']"
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle dropdown-toggle"
+            dropdownToggle
+            href="javascript:void(0)"
+            id="navbarDropdownMenuLink"
           >
-            Logowanie
+            <i> </i> Logowanie
           </a>
+          <div
+            aria-labelledby="navbarDropdownMenuLink"
+            class="dropdown-menu"
+            *dropdownMenu
+          >
+            <a class="dropdown-item" [routerLink]="['/login']">
+              <i class="tim-icons icon-key-25"></i>Logowanie do Inparcel
+            </a>
+            <a class="dropdown-item" [href]="['http://localhost:5200']">
+              <i class="tim-icons icon-molecule-40"> </i>Inparcel Management
+            </a>
+          </div>
         </li>
       </ul>
     </div>

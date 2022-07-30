@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-body">
               <div class="d-grid">
-                <button class="btn btn-primary submit">Zarejestruj przesyłkę</button>
+                <button class="btn btn-dev submit">Zarejestruj przesyłkę</button>
                 <p *ngIf="isError" class = "error">Paczka nie została zarejestrowana!</p>
               </div>
           </div>
@@ -14,7 +14,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="mb-0 text-primary font-weight-bold">
+            <h5 class="mb-0 text-dev font-weight-bold">
               <div>
                 <div>{{ rxTime | date: 'hh:mm:ss a' }}</div>
               </div>
@@ -147,7 +147,7 @@
                       <div class="d-flex align-items-center">
                         <div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
                         </div>
-                        <div class="font-weight-bold text-danger">{{route.parcel.id}}</div>
+                        <div class="font-weight-bold text-dev">{{route.parcel.id}}</div>
                       </div>
                     </td>
                     <td>{{route.created}}</td>
