@@ -166,14 +166,29 @@
             <p class="d-lg-none d-xl-none">Oddziały</p>
           </a>
         </li>
-        <li class="nav-item"
-            *ngIf="!isLoggedIn">
+        <li class="nav-item dropdown" dropdown>
           <a
-            class="nav-link"
-            [routerLink]="['/login']"
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle dropdown-toggle"
+            dropdownToggle
+            href="javascript:void(0)"
+            id="navbarDropdownMenuLink"
           >
-            Logowanie
+            <i> </i> Logowanie
           </a>
+          <div
+            aria-labelledby="navbarDropdownMenuLink"
+            class="dropdown-menu"
+            *dropdownMenu
+          >
+            <a class="dropdown-item" [routerLink]="['/login']">
+              <i class="tim-icons icon-key-25"></i>Logowanie do Inparcel
+            </a>
+            <a class="dropdown-item" [routerLink]="['/']">
+              <i class="tim-icons icon-molecule-40"> </i>Inparcel Management
+            </a>
+          </div>
         </li>
       </ul>
     </div>
