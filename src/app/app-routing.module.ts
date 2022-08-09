@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'routes', component: RouteListComponent, canActivate: [AuthGuard]},
   {path: 'route/parcelCode/:id', component: RouteViewComponent},
   {path: 'route-find', component: RouteFormComponent},
-  {path: 'parcel/add', component: ParcelAddComponent, canActivate: [AuthGuard]},
+  {path: 'parcel/add', component: ParcelAddComponent},
   {path: 'route-create', component: RouteGetComponent, canActivate: [AuthGuard]},
   {path: 'user/profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'depots', component: DepotAllComponent},
