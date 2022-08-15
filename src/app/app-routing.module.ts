@@ -13,20 +13,23 @@ import {DepotAllComponent} from './depot-all/depot-all.component';
 import {AdministratorComponent} from './administrator/administrator.component';
 import {ParcelInfoComponent} from './parcels/parcel-info/parcel-info.component';
 import {ClientParcelComponent} from './parcels/client-parcel/client-parcel.component';
+import {AuthGuard} from './auth/auth.guard';
+import {NotAuthGuard} from './auth/not.auth.guard';
+import {AdminGuard} from './auth/admin.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignupComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'routes', component: RouteListComponent},
+  {path: 'login', component: LoginComponent, canActivate: [NotAuthGuard]},
+  {path: 'routes', component: RouteListComponent, canActivate: [AuthGuard]},
   {path: 'route/parcelCode/:id', component: RouteViewComponent},
   {path: 'route-find', component: RouteFormComponent},
   {path: 'parcel/add', component: ParcelAddComponent},
-  {path: 'route-create', component: RouteGetComponent},
-  {path: 'user/profile', component: UserProfileComponent},
+  {path: 'route-create', component: RouteGetComponent, canActivate: [AuthGuard]},
+  {path: 'user/profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'depots', component: DepotAllComponent},
-  {path: 'admin/routes/:id', component: AdministratorComponent},
+  {path: 'admin/routes/:id', component: AdministratorComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'parcel/information/:id', component: ParcelInfoComponent},
   {path: 'parcel/client/management/:id', component: ClientParcelComponent}
 

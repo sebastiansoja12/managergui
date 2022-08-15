@@ -125,6 +125,9 @@
 .btn-neutral {
   @include btn-styles($white, $white);
 }
+.btn-dev {
+  @include btn-styles($dev, $info-states);
+}
 
 .btn {
   &:disabled,
