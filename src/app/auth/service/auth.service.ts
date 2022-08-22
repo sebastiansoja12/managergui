@@ -25,8 +25,7 @@ export class AuthService {
 
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
-    username: this.getUserName(),
-    role: this.getRole()
+    username: this.getUserName()
   };
   firstName: string;
 

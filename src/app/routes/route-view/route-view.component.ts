@@ -20,10 +20,11 @@ export class RouteViewComponent implements  OnInit {
 
 
   routes: Route[];
- id: string;
+  id: string;
   routeSub: Subscription;
    isError: boolean;
   private message: string;
+  isEmpty: boolean;
 
   constructor(private routeService: RouteService, private routeForm: RouteFormComponent,
               private localStorage: LocalStorageService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -36,12 +37,16 @@ export class RouteViewComponent implements  OnInit {
    this.routeService.getAllRoutesByParcelId(this.id).subscribe(data => {
      this.isError = false;
      this.routes = data;
+     if (this.routes.length === 0) {
+       this.isEmpty = true;
+     }
     }, error => {
       this.isError = true;
       throwError(error);
       this.message = 'Paczka o id: ' +  this.id + ' nie została znaleziona.\n' +
         'Sprawdź numer swojej przesyłki i spróbuj ponownie';
     });
+
 
   }
 

@@ -127,6 +127,10 @@
   @include border-radius($card-inner-border-radius);
 }
 
+.reroute-img {
+  width: auto; // Required because we use flexbox and this inherently applies align-self: stretch
+}
+
 // Card image caps
 .card-img-top {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch

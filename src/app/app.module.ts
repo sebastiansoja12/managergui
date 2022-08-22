@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {TokenInterceptor} from './token-interceptor';
 import {HomeComponent} from './home/home.component';
 import { RouteListComponent } from './routes/route-list/route-list.component';
@@ -44,6 +44,9 @@ import { ParcelInfoComponent } from './parcels/parcel-info/parcel-info.component
 import {Supplier} from './auth/model/supplier';
 import {SupplierService} from './auth/service/supplier.service';
 import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.component';
+import { RerouteGetComponent } from './reroutes/reroute-get/reroute-get.component';
+import { RerouteEditComponent } from './reroutes/reroute-edit/reroute-edit.component';
+import { RerouteCreateComponent } from './reroutes/reroute-create/reroute-create.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.com
     HeaderComponent,
     FooterComponent,
     ParcelInfoComponent,
-    ClientParcelComponent
+    ClientParcelComponent,
+    RerouteGetComponent,
+    RerouteEditComponent,
+    RerouteCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +110,8 @@ DatePipe,
     RouteViewComponent,
     RouteListComponent,
     RouteGetComponent,
-    AdministratorComponent
+    AdministratorComponent,
+    ToastrService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

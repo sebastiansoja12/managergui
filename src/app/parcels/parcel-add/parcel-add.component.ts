@@ -4,7 +4,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Parcel} from '../../auth/model/parcel';
 import {Router} from '@angular/router';
 import {AuthService} from '../../auth/service/auth.service';
-import {ToastrService} from 'ngx-toastr';
 import {ParcelTypeDetermination} from '../../auth/model/enumeration/ParcelTypeDetermination';
 import {throwError} from 'rxjs';
 
@@ -45,7 +44,7 @@ export class ParcelAddComponent implements OnInit {
 
   constructor(
     private parcelService: ParcelService, private parcel: Parcel,
-    private router: Router, private authService: AuthService, private toastr: ToastrService) {
+    private router: Router, private authService: AuthService) {
   }
 
 
