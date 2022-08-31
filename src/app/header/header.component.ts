@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import { AuthService } from '../auth/service/auth.service';
-import { Router} from '@angular/router';
+import {AuthService} from '../auth/service/auth.service';
+import {Router} from '@angular/router';
+import {RouteService} from '../auth/service/route-service.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
@@ -20,13 +22,17 @@ export class HeaderComponent implements OnInit {
   focus2;
   isError: boolean;
   firstName: string;
+  parcelFindForm: FormGroup;
+  parcelId: string;
 
-
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private routeService: RouteService) {
   }
 
 
   ngOnInit(): any {
+    this.parcelFindForm = new FormGroup({
+      id: new FormControl('', Validators.required)
+    });
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
     this.authService.username.subscribe((data: string) => this.username = data);
     this.authService.role.subscribe((data: string) => this.role = data);
@@ -43,6 +49,12 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.isLoggedIn = false;
     this.router.navigateByUrl('/home');
+  }
+
+  findParcel(): any {
+    this.parcelId = this.parcelFindForm.get('id').value;
+    this.router.navigateByUrl('/route/parcelCode/' + this.parcelId);
+    this.parcelFindForm.reset();
   }
 
 

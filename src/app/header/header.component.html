@@ -208,9 +208,9 @@
           </div>
         </li>
         <li class="nav-item p-0">
-          <form class="form-inline ml-auto">
+          <form class="form-inline ml-auto" [formGroup]="parcelFindForm" (keyup.enter)="findParcel()" >
             <div class="form-group no-border">
-              <input type="text" class="form-control" placeholder="Szukaj przesyłki">
+              <input type="text" class="form-control" placeholder="Szukaj przesyłki" [formControlName]="'id'">
             </div>
           </form>
         </li>
