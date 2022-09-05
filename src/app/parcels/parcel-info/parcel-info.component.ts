@@ -12,7 +12,7 @@ import {ParcelStatus} from '../../auth/model/enumeration/ParcelStatus';
 })
 export class ParcelInfoComponent implements OnInit {
 
-  id: string;
+  id: number;
   paymentRoute: Subscription;
   payment: PaymentInformation;
   isError: boolean;

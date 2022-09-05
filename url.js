@@ -7,3 +7,4 @@ export const devUrl = {
 export const prodUrl = {
   url: 'https://inparcel.herokuapp.com'
 }
+

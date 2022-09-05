@@ -40,7 +40,7 @@ export class AdministratorComponent implements OnInit {
       this.routes = data;
     });
   }
-  deleteRouteByParcelId(id: string): any{
+  deleteRouteByParcelId(id: number): any{
     this.routeService.deleteRouteByParcelId(id).subscribe(data => {
       this.routes = data;
     });

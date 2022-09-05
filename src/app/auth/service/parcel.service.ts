@@ -34,11 +34,11 @@ export class ParcelService {
       }));
   }
 
-  findPaymentByParcelId(id: string): Observable<PaymentInformation> {
+  findPaymentByParcelId(id: number): Observable<PaymentInformation> {
     return this.http.get<PaymentInformation>(this.url + '/payments/' + id);
   }
 
-  findParcelById(id: string): Observable<Parcel> {
+  findParcelById(id: number): Observable<Parcel> {
     return this.http.get<Parcel>(this.url + '/parcels/' + id);
   }
 

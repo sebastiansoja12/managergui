@@ -32,7 +32,7 @@ export class RouteGetComponent implements OnInit {
   supplierArray: Supplier[];
   url: string;
   parcelId: string;
-  id: string;
+  id: number;
 
   createRouteRequestPayload: {
     id: string;
