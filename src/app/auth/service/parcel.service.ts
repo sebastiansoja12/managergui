@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 import {PaymentInformation} from '../model/PaymentInformation';
 import {map} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 
 @Injectable({

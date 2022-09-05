@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {RerouteRequest} from '../model/RerouteRequest';
 import {TokenValidationRequest} from '../model/TokenValidationRequest';
 import {UpdateParcelRequest} from '../model/UpdateParcelRequest';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Depot} from '../model/depot';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 
 @Injectable()
