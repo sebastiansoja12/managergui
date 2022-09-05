@@ -7,7 +7,7 @@ import { LoginRequestPayload } from '../login/login-request.payload';
 import { LoginResponse } from '../login/login-response.payload';
 import { map, tap } from 'rxjs/operators';
 import {User} from '../model/user';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'

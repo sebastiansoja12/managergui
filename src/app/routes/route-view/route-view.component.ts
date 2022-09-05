@@ -20,7 +20,7 @@ export class RouteViewComponent implements  OnInit {
 
 
   routes: Route[];
-  id: string;
+  id: number;
   routeSub: Subscription;
    isError: boolean;
   private message: string;

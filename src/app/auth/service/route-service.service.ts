@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Depot} from '../model/depot';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 
 @Injectable()
@@ -47,11 +47,11 @@ export class RouteService {
     }));
   }
 
-  getAllRoutesByParcelId(id: string): Observable<Array<Route>> {
+  getAllRoutesByParcelId(id: number): Observable<Array<Route>> {
     return this.http.get<Array<Route>>(this.url + '/api/routes/' + id + '/parcelId');
   }
 
-  deleteRouteByParcelId(id: string): any {
+  deleteRouteByParcelId(id: number): any {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '

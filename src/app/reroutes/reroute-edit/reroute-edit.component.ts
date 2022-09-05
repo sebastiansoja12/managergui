@@ -28,7 +28,7 @@ export class RerouteEditComponent implements OnInit {
   focus2;
   isError: boolean;
   isSuccessfullyUpdated: boolean;
-  parcelId: string;
+  parcelId: any;
   parcel: Parcel;
   routeSub: Subscription;
   private updateParcelRequest: UpdateParcelRequest;

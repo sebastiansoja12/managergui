@@ -91,7 +91,7 @@ export class ParcelAddComponent implements OnInit {
         if (this.parcelService.getPaymentUrl() != null) {
           window.location.assign(this.parcelService.getPaymentUrl());
         }
-        }, error => {
+      }, error => {
         this.isError = true;
         throwError(error);
       });

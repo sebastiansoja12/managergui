@@ -5,7 +5,7 @@ import {Depot} from '../model/depot';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
 import {AuthService} from './auth.service';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'

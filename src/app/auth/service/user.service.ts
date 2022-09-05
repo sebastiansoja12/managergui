@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {User} from '../model/user';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
-import {globalUrl} from 'url.js';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'

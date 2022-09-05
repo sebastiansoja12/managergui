@@ -34,7 +34,7 @@ export class RouteListComponent implements OnInit {
     this.username = this.authService.getUserName();
     this.firstName = this.authService.getFirstName();
   }
-  deleteRouteByParcelId(id: string): any{
+  deleteRouteByParcelId(id: number): any{
     this.routeService.deleteRouteByParcelId(id).subscribe(data => {
       this.routes = data;
     });
