@@ -1,6 +1,6 @@
 {
   "name": "inparcel-gui",
-  "version": "13.1.1",
+  "version": "1.3_dev",
   "scripts": {
     "ng": "ng",
     "build": "ng build --watch=true",
@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod",
-    "start" : "ng serve --open"
+    "start" : "node server.js"
 
   },
   "private": true,
