@@ -11,6 +11,8 @@ import {Subscription, throwError, timer} from 'rxjs';
 import {map, share} from 'rxjs/operators';
 import {Supplier} from '../../auth/model/supplier';
 import {SupplierService} from '../../auth/service/supplier.service';
+import {globalUrl} from 'urlConfig.js';
+
 
 @Component({
   selector: 'app-route-get',
@@ -51,7 +53,7 @@ export class RouteGetComponent implements OnInit {
       id: '',
       supplierCode: '',
     };
-    this.url = ' http://localhost:8080';
+    this.url = globalUrl.url;
   }
 
   ngOnInit(): void {

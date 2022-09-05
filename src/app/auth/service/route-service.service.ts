@@ -42,7 +42,7 @@ export class RouteService {
       'Content-Type': 'application/json',
       Authorization: 'Basic '
     });
-    return this.http.post<Route>(this.registerParcel, parcelRoute, {headers}).pipe(map(data => {
+    return this.http.post<Route>(this.url + this.registerParcel, parcelRoute, {headers}).pipe(map(data => {
       return true;
     }));
   }

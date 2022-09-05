@@ -35,7 +35,7 @@ export class ParcelService {
   }
 
   findPaymentByParcelId(id: number): Observable<PaymentInformation> {
-    return this.http.get<PaymentInformation>(this.url + '/payments/' + id);
+    return this.http.get<PaymentInformation>(this.url + '/api/payments/' + id);
   }
 
   findParcelById(id: number): Observable<Parcel> {
