@@ -7,7 +7,6 @@ import {Depot} from '../../auth/model/depot';
 import {Parcel} from '../../auth/model/parcel';
 import {Route} from '../../auth/model/route';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
 import {Subscription, throwError, timer} from 'rxjs';
 import {map, share} from 'rxjs/operators';
 import {Supplier} from '../../auth/model/supplier';
@@ -45,7 +44,6 @@ export class RouteGetComponent implements OnInit {
               private router: Router,
               private parcel: Parcel,
               private route: Route,
-              private toastr: ToastrService,
               private activatedRoute: ActivatedRoute,
               private supplierService: SupplierService,
               private supplier: Supplier) {
@@ -98,7 +96,6 @@ export class RouteGetComponent implements OnInit {
       this.isError = false;
     }, error => {
       this.isError = true;
-      this.toastr.success('Błędny kod lub paczka została już zarejestrowana');
       throwError(error);
     });
     window.location.reload();
