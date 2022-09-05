@@ -37,7 +37,6 @@ export class RouteFormComponent implements OnInit {
     this.parcelFindForm = new FormGroup({
       id: new FormControl('', Validators.required)
     });
-
   }
 
   findParcel(): any {

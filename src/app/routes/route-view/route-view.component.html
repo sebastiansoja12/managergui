@@ -4,13 +4,24 @@
     class="alert-with-icon"
     [type]="'success alert-with-icon'"
     [dismissible]="true"
-    *ngIf="!isError"
+    *ngIf="!isError && !isEmpty"
   >
     <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
     <span>
       <b> Paczka znaleziona - </b> Poniżej znajduje się trasa Twojej przesyłki
     </span>
   </alert>
+    <alert
+      class="alert-with-icon"
+      [type]="'warning alert-with-icon'"
+      [dismissible]="true"
+      *ngIf="!isError && isEmpty"
+    >
+      <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+      <span>
+      <b> Ups! </b> Podróż Twojej przesyłki jeszcze się nie rozpoczęła!
+    </span>
+    </alert>
   <alert
       class="alert-with-icon"
       [type]="'danger alert-with-icon'"

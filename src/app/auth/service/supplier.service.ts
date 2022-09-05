@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Observable} from 'rxjs';
 import {Supplier} from '../model/supplier';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SupplierService {
   url: string;
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.url = 'http://localhost:8080';
+    this.url = globalUrl.url;
   }
 
   public findAll(): Observable<Supplier[]> {

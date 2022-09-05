@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Depot} from '../model/depot';
+import {globalUrl} from 'urlConfig.js';
 
 
 @Injectable()
@@ -14,24 +15,26 @@ export class RouteService {
   depotinfUrl: string;
   registerParcel: string;
   userUrl: string;
+  url: string;
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.routeUrl = 'http://localhost:8080/api/routes';
-    this.depotinfUrl = 'http://localhost:8080/api/depots';
-    this.registerParcel = 'http://localhost:8080/api/routes';
-    this.userUrl = 'http://localhost:8080/api/routes/user/';
+    this.routeUrl = '/api/routes';
+    this.depotinfUrl = '/api/depots';
+    this.registerParcel = '/api/routes';
+    this.userUrl = '/api/routes/user/';
+    this.url = globalUrl.url;
   }
 
   findByUsername(username: string): Observable<Route[]> {
-    return this.http.get<Route[]>('http://localhost:8080/api/routes/' + username + '/user');
+    return this.http.get<Route[]>(this.url + '/api/routes/' + username + '/user');
   }
 
   public findAll(): Observable<Route[]> {
-    return this.http.get<Route[]>(this.routeUrl);
+    return this.http.get<Route[]>(this.url + this.routeUrl);
   }
 
   public findAllDepots(): Observable<Depot[]> {
-    return this.http.get<Depot[]>(this.depotinfUrl);
+    return this.http.get<Depot[]>(this.url + this.depotinfUrl);
   }
 
   public save(parcelRoute: Route): Observable<boolean> {
@@ -44,15 +47,15 @@ export class RouteService {
     }));
   }
 
-  getAllRoutesByParcelId(id: string): Observable<Array<Route>> {
-    return this.http.get<Array<Route>>('http://localhost:8080/api/routes/' + id + '/parcelId');
+  getAllRoutesByParcelId(id: number): Observable<Array<Route>> {
+    return this.http.get<Array<Route>>(this.url + '/api/routes/' + id + '/parcelId');
   }
 
-  deleteRouteByParcelId(id: string): any {
+  deleteRouteByParcelId(id: number): any {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '
     });
-    return this.http.post<Route>('http://localhost:8080/api/routes/' + id + '/parcelId', {headers});
+    return this.http.post<Route>(this.url + '/api/routes/' + id + '/parcelId', {headers});
   }
 }
