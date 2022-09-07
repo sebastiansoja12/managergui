@@ -1,5 +1,5 @@
 export const globalUrl = {
-  url: 'http://localhost:8080'
+  url: 'https://inparcel-test.herokuapp.com'
 }
 export const testUrl = {
   url: 'https://inparcel-test.herokuapp.com'

@@ -8,7 +8,7 @@
   @include transition-input-focus-color();
 
   &:focus {
-    border-color: white;
+    border-color: $test;
     background-color: $input-bg;
     @include box-shadow(none);
 
@@ -16,7 +16,7 @@
     & ~ .input-group-append .input-group-text,
     & + .input-group-prepend .input-group-text,
     & ~ .input-group-prepend .input-group-text {
-      border: 1px solid white;
+      border: 1px solid $test;
       border-left: none;
       background-color: $transparent-bg;
     }

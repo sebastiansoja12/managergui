@@ -74,10 +74,12 @@ $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
-$danger: #003865 !default;
+$danger: $test !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 $dev: #003865 !default;
+$test: #D65076 !default;
+
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default

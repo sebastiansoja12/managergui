@@ -115,10 +115,10 @@
 .input-group-focus {
   .input-group-prepend .input-group-text,
   .input-group-append .input-group-text {
-    background-color: $white;
-    border-color: $white;
+    background-color: $test;
+    border-color: $test;
     background-color: $transparent-bg;
-    border-color: $white;
+    border-color: $test;
   }
 
   &.no-border {
