@@ -19,6 +19,7 @@ import {AdminGuard} from './auth/admin.guard';
 import {RerouteCreateComponent} from './reroutes/reroute-create/reroute-create.component';
 import {RerouteEditComponent} from './reroutes/reroute-edit/reroute-edit.component';
 import {RerouteGetComponent} from './reroutes/reroute-get/reroute-get.component';
+import {ParcelAllComponent} from './parcels/parcel-all/parcel-all.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home'},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'reroute-edit/:id/:token', component: RerouteEditComponent},
   {path: 'reroute-get', component: RerouteGetComponent},
   {path: 'parcel/add', component: ParcelAddComponent},
+  {path: 'parcels', component: ParcelAllComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'route-create', component: RouteGetComponent, canActivate: [AuthGuard]},
   {path: 'user/profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'depots', component: DepotAllComponent},
@@ -43,8 +45,6 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
-  exports: [RouterModule]
-})
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })]})
 export class AppRoutingModule {
 }

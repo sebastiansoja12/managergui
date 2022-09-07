@@ -126,8 +126,4 @@ export class HeaderComponent implements OnInit {
       posY * -0.02 +
       'deg)';
   }
-
-
-
-
 }

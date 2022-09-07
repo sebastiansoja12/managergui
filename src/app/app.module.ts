@@ -47,6 +47,7 @@ import { ClientParcelComponent } from './parcels/client-parcel/client-parcel.com
 import { RerouteGetComponent } from './reroutes/reroute-get/reroute-get.component';
 import { RerouteEditComponent } from './reroutes/reroute-edit/reroute-edit.component';
 import { RerouteCreateComponent } from './reroutes/reroute-create/reroute-create.component';
+import { ParcelAllComponent } from './parcels/parcel-all/parcel-all.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { RerouteCreateComponent } from './reroutes/reroute-create/reroute-create
     ClientParcelComponent,
     RerouteGetComponent,
     RerouteEditComponent,
-    RerouteCreateComponent
+    RerouteCreateComponent,
+    ParcelAllComponent
   ],
   imports: [
     BrowserModule,
