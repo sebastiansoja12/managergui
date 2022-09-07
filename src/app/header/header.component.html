@@ -72,6 +72,9 @@
             <a class="dropdown-item" [routerLink]="['/admin/routes/' + username]" *ngIf="isAdmin">
               <i class="tim-icons icon-components"></i>Historie przesyłek
             </a>
+            <a class="dropdown-item" [routerLink]="['/parcels']" *ngIf="isAdmin">
+              <i class="tim-icons icon-send"></i>Paczki
+            </a>
           </div>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
@@ -202,7 +205,7 @@
             <a class="dropdown-item" [routerLink]="['/login']">
               <i class="tim-icons icon-key-25"></i>Logowanie do Inparcel
             </a>
-            <a class="dropdown-item" [href]="['http://localhost:5200']">
+            <a class="dropdown-item" [href]="['/']">
               <i class="tim-icons icon-molecule-40"> </i>Inparcel Management
             </a>
           </div>
