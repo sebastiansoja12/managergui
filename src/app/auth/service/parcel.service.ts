@@ -35,15 +35,15 @@ export class ParcelService {
   }
 
   findPaymentByParcelId(id: number): Observable<PaymentInformation> {
-    return this.http.get<PaymentInformation>(this.url + '/payments/' + id);
+    return this.http.get<PaymentInformation>(this.url + '/api/payments/' + id);
   }
 
   findParcelById(id: number): Observable<Parcel> {
-    return this.http.get<Parcel>(this.url + '/parcels/' + id);
+    return this.http.get<Parcel>(this.url + '/api/parcels/' + id);
   }
 
   public saveParcel(parcel: Parcel): Observable<boolean> {
-    return this.http.post(this.url + '/parcels', parcel, {responseType: 'text'})
+    return this.http.post(this.url + '/api/parcels', parcel, {responseType: 'text'})
       .pipe(map(data => {
         this.localStorage.store('paymentUrl', data);
         this.paymentUrl.emit(data);
