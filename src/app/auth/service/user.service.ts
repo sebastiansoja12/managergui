@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Route} from '../model/route';
 import {User} from '../model/user';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,13 @@ export class UserService {
 
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.url = 'https://inparcel.herokuapp.com';
-    this.userUrl = 'http://localhost:8080/api/users/all';
+    this.userUrl = '/api/users/all';
     this.adminUrl = 'http://localhost:8080/api/users/all/user/';
+    this.url = globalUrl.url;
   }
 
   public findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.url + '/api/users/all');
+    return this.http.get<User[]>(this.url + this.userUrl);
   }
 
 }

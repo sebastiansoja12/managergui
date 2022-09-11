@@ -5,6 +5,7 @@ import {Depot} from '../model/depot';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
 import {AuthService} from './auth.service';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class DepotService {
     private depot: Depot, private http: HttpClient, private localStorage: LocalStorageService,
     private authService: AuthService
   ) {
-    this.depotUrl = 'https://inparcel.herokuapp.com/api/depots';
+    this.depotUrl = globalUrl.url + '/api/depots';
   }
 
 

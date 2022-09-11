@@ -2,7 +2,7 @@ import {ParcelTypeDetermination} from './enumeration/ParcelTypeDetermination';
 
 
 export class Parcel {
-  id: string;
+  id: number;
   firstName: string;
   lastName: string;
   senderTelephone: string;

@@ -5,8 +5,10 @@ import {LocalStorageService} from 'ngx-webstorage';
 import {AuthService} from './auth.service';
 import {Observable} from 'rxjs';
 import {PaymentInformation} from '../model/PaymentInformation';
-import {map, filter, switchMap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import {globalUrl} from 'urlConfig.js';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,9 @@ export class ParcelService {
 
   @Output() paymentUrl: EventEmitter<string> = new EventEmitter();
 
-  constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.url = 'https://inparcel.herokuapp.com';
+  constructor(private http: HttpClient, private localStorage: LocalStorageService,
+              private router: Router) {
+    this.url = globalUrl.url;
   }
 
 
@@ -31,16 +34,16 @@ export class ParcelService {
       }));
   }
 
-  findPaymentByParcelId(id: string): Observable<PaymentInformation> {
-    return this.http.get<PaymentInformation>(this.url + '/api/payments/' + id);
+  findPaymentByParcelId(id: number): Observable<PaymentInformation> {
+    return this.http.get<PaymentInformation>(this.url + '/payments/' + id);
   }
 
-  findParcelById(id: string): Observable<Parcel> {
-    return this.http.get<Parcel>(this.url + '/api/parcels/' + id);
+  findParcelById(id: number): Observable<Parcel> {
+    return this.http.get<Parcel>(this.url + '/parcels/' + id);
   }
 
   public saveParcel(parcel: Parcel): Observable<boolean> {
-    return this.http.post(this.url + '/api/parcels', parcel, {responseType: 'text'})
+    return this.http.post(this.url + '/parcels', parcel, {responseType: 'text'})
       .pipe(map(data => {
         this.localStorage.store('paymentUrl', data);
         this.paymentUrl.emit(data);

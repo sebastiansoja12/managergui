@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   routes: Array<Route>;
   parcelFindForm: FormGroup;
   dss: string;
-  id: string;
+  id: number;
   isCollapsed = true;
   focus;
   focus1;

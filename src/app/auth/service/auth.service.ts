@@ -7,7 +7,7 @@ import { LoginRequestPayload } from '../login/login-request.payload';
 import { LoginResponse } from '../login/login-response.payload';
 import { map, tap } from 'rxjs/operators';
 import {User} from '../model/user';
-import {Route} from '../model/route';
+import {globalUrl} from 'urlConfig.js';
 
 @Injectable({
   providedIn: 'root'
@@ -25,15 +25,13 @@ export class AuthService {
 
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
-    username: this.getUserName(),
-    role: this.getRole()
+    username: this.getUserName()
   };
   firstName: string;
   url: string;
-
   constructor(private httpClient: HttpClient,
               private localStorage: LocalStorageService) {
-    this.url = 'https://inparcel.herokuapp.com';
+    this.url = globalUrl.url;
   }
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<boolean> {

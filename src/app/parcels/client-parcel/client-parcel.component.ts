@@ -12,7 +12,7 @@ import {Parcel} from '../../auth/model/parcel';
 export class ClientParcelComponent implements OnInit {
 
   isError: boolean;
-  id: string;
+  id: number;
   message: string;
   paymentRoute: Subscription;
   parcel: Parcel;

@@ -16,6 +16,9 @@ import {ClientParcelComponent} from './parcels/client-parcel/client-parcel.compo
 import {AuthGuard} from './auth/auth.guard';
 import {NotAuthGuard} from './auth/not.auth.guard';
 import {AdminGuard} from './auth/admin.guard';
+import {RerouteCreateComponent} from './reroutes/reroute-create/reroute-create.component';
+import {RerouteEditComponent} from './reroutes/reroute-edit/reroute-edit.component';
+import {RerouteGetComponent} from './reroutes/reroute-get/reroute-get.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home'},
@@ -25,6 +28,9 @@ const routes: Routes = [
   {path: 'routes', component: RouteListComponent, canActivate: [AuthGuard]},
   {path: 'route/parcelCode/:id', component: RouteViewComponent},
   {path: 'route-find', component: RouteFormComponent},
+  {path: 'reroute-create', component: RerouteCreateComponent},
+  {path: 'reroute-edit/:id/:token', component: RerouteEditComponent},
+  {path: 'reroute-get', component: RerouteGetComponent},
   {path: 'parcel/add', component: ParcelAddComponent},
   {path: 'route-create', component: RouteGetComponent, canActivate: [AuthGuard]},
   {path: 'user/profile', component: UserProfileComponent, canActivate: [AuthGuard]},

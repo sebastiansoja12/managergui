@@ -1,25 +1,28 @@
-import { Injectable, AfterViewInit } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Route} from '../model/route';
 import {Observable} from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import {LoginResponse} from '../login/login-response.payload';
+import {map} from 'rxjs/operators';
 import {LocalStorageService} from 'ngx-webstorage';
-import {RouteRequestPayload} from '../../routes/route-find/route-request.payload';
-import {User} from '../model/user';
 import {Depot} from '../model/depot';
-import {Parcel} from '../model/parcel';
-import {CreateRouteRequestPayload} from '../../routes/route-get/CreateRouteRequestPayload';
+import {globalUrl} from 'urlConfig.js';
 
 
 @Injectable()
 export class RouteService {
 
+  routeUrl: string;
+  depotinfUrl: string;
+  registerParcel: string;
+  userUrl: string;
   url: string;
 
-
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.url = 'https://inparcel.herokuapp.com';
+    this.routeUrl = '/api/routes';
+    this.depotinfUrl = '/api/depots';
+    this.registerParcel = '/api/routes';
+    this.userUrl = '/api/routes/user/';
+    this.url = globalUrl.url;
   }
 
   findByUsername(username: string): Observable<Route[]> {
@@ -27,31 +30,28 @@ export class RouteService {
   }
 
   public findAll(): Observable<Route[]> {
-    return this.http.get<Route[]>(this.url + '/api/routes');
+    return this.http.get<Route[]>(this.url + this.routeUrl);
   }
 
   public findAllDepots(): Observable<Depot[]> {
-    return this.http.get<Depot[]>(this.url + '/api/depots');
+    return this.http.get<Depot[]>(this.url + this.depotinfUrl);
   }
 
-  public getCity(): string {
-    return this.localStorage.retrieve('city');
-  }
-  public save(parcelRoute: Route): Observable<boolean>  {
+  public save(parcelRoute: Route): Observable<boolean> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '
     });
-    return this.http.post<Route>(this.url + '/api/routes', parcelRoute, {headers}).pipe(map(data => {
+    return this.http.post<Route>(this.registerParcel, parcelRoute, {headers}).pipe(map(data => {
       return true;
     }));
   }
 
-  getAllRoutesByParcelId(id: string): Observable<Array<Route>> {
+  getAllRoutesByParcelId(id: number): Observable<Array<Route>> {
     return this.http.get<Array<Route>>(this.url + '/api/routes/' + id + '/parcelId');
   }
 
-  deleteRouteByParcelId(id: string): any {
+  deleteRouteByParcelId(id: number): any {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Basic '
