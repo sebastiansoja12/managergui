@@ -1,10 +1,10 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { SignupRequestPayload } from '../dto/singup-request.payload';
+import { SignupRequestPayload } from '../../auth/dto/singup-request.payload';
 import { Observable, throwError } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
-import { LoginRequestPayload } from '../dto/login-request.payload';
-import { LoginResponse } from '../dto/login-response.payload';
+import { LoginRequestPayload } from '../../auth/dto/login-request.payload';
+import { LoginResponse } from '../../auth/dto/login-response.payload';
 import { map, tap } from 'rxjs/operators';
 import {User} from '../model/user';
 import {globalUrl} from '../../../../urlConfig';

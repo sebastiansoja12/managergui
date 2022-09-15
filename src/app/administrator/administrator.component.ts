@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '../auth/model/route';
-import {User} from '../auth/model/user';
-import {RouteService} from '../auth/service/route-service.service';
-import {AuthService} from '../auth/service/auth.service';
+import {Route} from '../services/model/route';
+import {User} from '../services/model/user';
+import {RouteService} from '../services/route/route-service.service';
+import {AuthService} from '../services/auth/auth.service';
 import {LocalStorageService} from 'ngx-webstorage';
-import {UserService} from '../auth/service/user.service';
+import {UserService} from '../services/user/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 

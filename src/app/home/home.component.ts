@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output, OnDestroy} from '@angular/core';
 import {throwError} from 'rxjs';
-import {Route} from '../auth/model/route';
+import {Route} from '../services/model/route';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {RouteService} from '../auth/service/route-service.service';
+import {RouteService} from '../services/route/route-service.service';
 import noUiSlider from 'nouislider';
 import {Router} from '@angular/router';
 
