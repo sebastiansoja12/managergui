@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ParcelService} from '../../../services/parcel/parcel.service';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription, throwError} from 'rxjs';
-import {Parcel} from '../../../services/model/parcel';
+import {Parcel} from '../../model/parcel';
+import {ParcelService} from '../../service/parcel/parcel.service';
 
 @Component({
   selector: 'app-client-parcel',

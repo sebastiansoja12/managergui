@@ -10,9 +10,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {TokenInterceptor} from './token-interceptor';
 import {HomeComponent} from './home/home.component';
-import {ParcelAddComponent} from './parcels/component/parcel-add/parcel-add.component';
-import {ParcelService} from './services/parcel/parcel.service';
-import {Parcel} from './services/model/parcel';
 import {RouteService} from './services/route/route-service.service';
 import {Route} from './services/model/route';
 import {APP_BASE_HREF, DatePipe} from '@angular/common';
@@ -31,28 +28,22 @@ import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {HeaderComponent} from './header/component/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {ParcelInfoComponent} from './parcels/component/parcel-info/parcel-info.component';
 import {SupplierService} from './services/supplier/supplier.service';
-import {ClientParcelComponent} from './parcels/component/client-parcel/client-parcel.component';
-import {ParcelAllComponent} from './parcels/component/parcel-all/parcel-all.component';
 import {Supplier} from './services/model/supplier';
 import {DepotModule} from './depots/depot.module';
 import {SupplierModule} from './suppliers/supplier.module';
 import {AuthModule} from './auth/auth.module';
 import {RouteModule} from './routes/route.module';
 import {RerouteModule} from './reroutes/reroute.module';
+import {ParcelModule} from './parcels/parcel.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ParcelAddComponent,
     AdministratorComponent,
     HeaderComponent,
-    FooterComponent,
-    ParcelInfoComponent,
-    ClientParcelComponent,
-    ParcelAllComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +52,7 @@ import {RerouteModule} from './reroutes/reroute.module';
     AuthModule,
     RouteModule,
     RerouteModule,
+    ParcelModule,
     AppRoutingModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
@@ -88,11 +80,9 @@ DatePipe,
       useClass: TokenInterceptor,
       multi: true
     },
-    Parcel,
     Route,
     Supplier,
     SupplierService,
-    ParcelService,
     RouteService,
     AdministratorComponent
   ],

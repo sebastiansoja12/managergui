@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ParcelService} from '../../../services/parcel/parcel.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Parcel} from '../../../services/model/parcel';
-import {Router} from '@angular/router';
-import {AuthService} from '../../../services/auth/auth.service';
-import {ParcelTypeDetermination} from '../../../services/model/enumeration/ParcelTypeDetermination';
+import {ParcelTypeDetermination} from '../../model/enumeration/ParcelTypeDetermination';
 import {throwError} from 'rxjs';
+import {ParcelService} from '../../service/parcel/parcel.service';
+import {Parcel} from '../../model/parcel';
 
 
 @Component({
@@ -42,10 +40,7 @@ export class ParcelAddComponent implements OnInit {
   public isError: boolean;
 
 
-  constructor(
-    private parcelService: ParcelService, private parcel: Parcel,
-    private router: Router, private authService: AuthService) {
-  }
+  constructor(private parcelService: ParcelService, private parcel: Parcel) { }
 
 
 

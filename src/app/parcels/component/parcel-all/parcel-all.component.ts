@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ParcelService} from '../../../services/parcel/parcel.service';
-import {Parcel} from '../../../services/model/parcel';
+import {Parcel} from '../../model/parcel';
+import {ParcelService} from '../../service/parcel/parcel.service';
 
 @Component({
   selector: 'app-parcel-all',

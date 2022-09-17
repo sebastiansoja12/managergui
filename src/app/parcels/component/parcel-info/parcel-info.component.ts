@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ParcelService} from '../../../services/parcel/parcel.service';
-import {PaymentInformation} from '../../../services/model/PaymentInformation';
 import {Subscription, throwError} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
-import {ParcelStatus} from '../../../services/model/enumeration/ParcelStatus';
+import {ParcelStatus} from '../../model/enumeration/ParcelStatus';
+import {PaymentInformation} from '../../model/PaymentInformation';
+import {ParcelService} from '../../service/parcel/parcel.service';
 
 @Component({
   selector: 'app-parcel-info',
