@@ -1,11 +1,11 @@
-import {Component, Injectable, OnInit, Output, ViewChild, AfterViewInit, Input} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
-import { RouteService} from '../../../services/route/route-service.service';
 import {ActivatedRoute} from '@angular/router';
 import {RouteFormComponent} from '../route-find/route-form.component';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Subscription, throwError} from 'rxjs';
-import {Route} from '../../../services/model/route';
+import {RouteService} from '../../service/route/route-service.service';
+import {Route} from '../../model/route';
 
 
 @Component({
@@ -26,7 +26,8 @@ export class RouteViewComponent implements  OnInit {
   isEmpty: boolean;
 
   constructor(private routeService: RouteService, private routeForm: RouteFormComponent,
-              private localStorage: LocalStorageService, private router: Router, private activatedRoute: ActivatedRoute) {
+              private localStorage: LocalStorageService, private router: Router,
+              private activatedRoute: ActivatedRoute) {
 
   }
   ngOnInit(): any {

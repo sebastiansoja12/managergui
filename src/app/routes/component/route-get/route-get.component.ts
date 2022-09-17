@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {RouteService} from '../../../services/route/route-service.service';
 import {LocalStorageService} from 'ngx-webstorage';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription, throwError, timer} from 'rxjs';
 import {map, share} from 'rxjs/operators';
-import {ParcelService} from '../../../services/parcel/parcel.service';
-import {SupplierService} from '../../../services/supplier/supplier.service';
 import {globalUrl} from 'urlConfig.js';
-import {Supplier} from '../../../services/model/supplier';
-import {Route} from '../../../services/model/route';
-import {Depot} from '../../../services/model/depot';
-import {Parcel} from '../../../services/model/parcel';
+import {Depot} from '../../model/depot';
+import {Route} from '../../model/route';
+import {Supplier} from '../../model/supplier';
+import {RouteService} from '../../service/route/route-service.service';
+import {Parcel} from '../../model/parcel';
+import {SupplierService} from '../../service/supplier/supplier.service';
 
 @Component({
   selector: 'app-route-get',
@@ -23,9 +22,7 @@ export class RouteGetComponent implements OnInit {
   getRouteForm: FormGroup;
   depot: Depot;
   isError: boolean;
-  routes: Route[];
   routesList: Route[];
-  temporaryRoutesList: Route[];
   time = new Date();
   rxTime = new Date();
   intervalId;
@@ -40,7 +37,7 @@ export class RouteGetComponent implements OnInit {
     supplierCode: string;
   };
 
-  constructor(private routeService: RouteService, private parcelService: ParcelService,
+  constructor(private routeService: RouteService,
               private localStorage: LocalStorageService,
               private router: Router,
               private parcel: Parcel,

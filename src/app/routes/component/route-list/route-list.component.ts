@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '../../../services/model/route';
-import { RouteService} from '../../../services/route/route-service.service';
-import {User} from '../../../services/model/user';
-import {AuthService} from '../../../services/auth/auth.service';
+import {User} from '../../model/user';
+import {Route} from '../../model/route';
+import {RouteService} from '../../service/route/route-service.service';
+import {AuthService} from '../../../auth/service/auth.service';
 
 
 @Component({

@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Injectable, OnInit, Output} from '@angular/core';
-import {RouteService} from '../../../services/route/route-service.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {Route} from '../../../services/model/route';
+import {Route} from '../../model/route';
+import {RouteService} from '../../service/route/route-service.service';
 
 
 @Component({
