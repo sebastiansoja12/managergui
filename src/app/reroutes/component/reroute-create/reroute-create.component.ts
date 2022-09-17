@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {RerouteService} from '../../../services/reroute/reroute.service';
 import {RerouteRequest} from '../../dto/RerouteRequest';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {throwError} from 'rxjs';
 import { ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {RerouteService} from '../../service/reroute/reroute.service';
 
 @Component({
   selector: 'app-reroute-create',

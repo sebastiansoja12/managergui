@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {RerouteService} from '../../../services/reroute/reroute.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ParcelService} from '../../../services/parcel/parcel.service';
 import {Subscription, throwError} from 'rxjs';
-import {Parcel} from '../../../services/model/parcel';
 import {ActivatedRoute} from '@angular/router';
 import {UpdateParcelRequest} from '../../dto/UpdateParcelRequest';
+import {Parcel} from '../../model/parcel';
+import {ParcelService} from '../../service/parcel/parcel.service';
+import {RerouteService} from '../../service/reroute/reroute.service';
 
 @Component({
   selector: 'app-reroute-edit',
@@ -14,7 +14,8 @@ import {UpdateParcelRequest} from '../../dto/UpdateParcelRequest';
 })
 export class RerouteEditComponent implements OnInit {
 
-  constructor(private rerouteService: RerouteService, private parcelService: ParcelService, private activatedRoute: ActivatedRoute) {
+  constructor(private rerouteService: RerouteService, private parcelService: ParcelService,
+              private activatedRoute: ActivatedRoute) {
     this.updateParcelRequest = {
       id: '',
       parcel: null,

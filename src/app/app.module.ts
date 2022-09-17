@@ -34,15 +34,13 @@ import {FooterComponent} from './footer/footer.component';
 import {ParcelInfoComponent} from './parcels/component/parcel-info/parcel-info.component';
 import {SupplierService} from './services/supplier/supplier.service';
 import {ClientParcelComponent} from './parcels/component/client-parcel/client-parcel.component';
-import {RerouteGetComponent} from './reroutes/component/reroute-get/reroute-get.component';
-import {RerouteEditComponent} from './reroutes/component/reroute-edit/reroute-edit.component';
-import {RerouteCreateComponent} from './reroutes/component/reroute-create/reroute-create.component';
 import {ParcelAllComponent} from './parcels/component/parcel-all/parcel-all.component';
 import {Supplier} from './services/model/supplier';
 import {DepotModule} from './depots/depot.module';
 import {SupplierModule} from './suppliers/supplier.module';
 import {AuthModule} from './auth/auth.module';
 import {RouteModule} from './routes/route.module';
+import {RerouteModule} from './reroutes/reroute.module';
 
 @NgModule({
   declarations: [
@@ -54,9 +52,6 @@ import {RouteModule} from './routes/route.module';
     FooterComponent,
     ParcelInfoComponent,
     ClientParcelComponent,
-    RerouteGetComponent,
-    RerouteEditComponent,
-    RerouteCreateComponent,
     ParcelAllComponent,
   ],
   imports: [
@@ -65,6 +60,7 @@ import {RouteModule} from './routes/route.module';
     SupplierModule,
     AuthModule,
     RouteModule,
+    RerouteModule,
     AppRoutingModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
