@@ -1,12 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../../services/auth/auth.service';
-import {ToastrService} from 'ngx-toastr';
-import {Router} from '@angular/router';
-import {RouteService} from '../../../services/route/route-service.service';
-import {Route} from '../../../services/model/route';
 import {throwError} from 'rxjs';
-import {Depot} from '../../../services/model/depot';
+import {Depot} from '../../model/depot';
+import {AuthService} from '../../service/auth/auth.service';
+import {DepotService} from '../../../depots/service/depot/depot.service';
 
 @Component({
   selector: 'app-signup',
@@ -26,11 +23,9 @@ export class SignupComponent implements OnInit {
   };
   signupForm: FormGroup;
   depot: Depot[];
-  route: Route[];
   isError: boolean;
 
-  constructor(private authService: AuthService, private router: Router,
-              private toastr: ToastrService, private routeService: RouteService) {
+  constructor(private authService: AuthService, private depotService: DepotService) {
     this.signupRequestPayload = {
       username: '',
       email: '',
@@ -44,7 +39,7 @@ export class SignupComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.routeService.findAllDepots().subscribe((data) => this.depot = data);
+    this.depotService.findAll().subscribe((data) => this.depot = data);
     this.signupForm = new FormGroup({
       username: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -72,7 +67,6 @@ export class SignupComponent implements OnInit {
         console.log(error);
         this.isError = true;
         throwError(error);
-        this.toastr.error('Rejestracja się nie powiodła');
       });
   }
 }

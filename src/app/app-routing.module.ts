@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SignupComponent} from './auth/component/signup/signup.component';
 import {LoginComponent} from './auth/component/login/login.component';
-import {HomeComponent} from './home/home.component';
+import {HomeComponent} from './pages/component/home/home.component';
 import {RouteListComponent} from './routes/component/route-list/route-list.component';
 import {RouteViewComponent} from './routes/component/route-view/route-view.component';
 import {RouteFormComponent} from './routes/component/route-find/route-form.component';
@@ -10,7 +10,7 @@ import {ParcelAddComponent} from './parcels/component/parcel-add/parcel-add.comp
 import {RouteGetComponent} from './routes/component/route-get/route-get.component';
 import {UserProfileComponent} from './auth/component/user-profile/user-profile.component';
 import {DepotAllComponent} from './depots/component/depot-all/depot-all.component';
-import {AdministratorComponent} from './administrator/administrator.component';
+import {AdministratorComponent} from './auth/component/administrator/administrator.component';
 import {ParcelInfoComponent} from './parcels/component/parcel-info/parcel-info.component';
 import {ClientParcelComponent} from './parcels/component/client-parcel/client-parcel.component';
 import {AuthGuard} from './auth/guard/auth.guard';

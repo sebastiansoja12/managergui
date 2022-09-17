@@ -1,4 +1,4 @@
-import {Parcel} from '../../services/model/parcel';
+import {Parcel} from '../model/parcel';
 
 export class UpdateParcelRequest {
   id: string;

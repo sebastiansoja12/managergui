@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../../services/auth/auth.service';
-import {User} from '../../../services/model/user';
-import {Observable} from 'rxjs';
+import {User} from '../../model/user';
+import {AuthService} from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,17 +10,12 @@ import {Observable} from 'rxjs';
 export class UserProfileComponent implements OnInit {
 
   users: Array<User>;
-  users2: User;
   email: string;
   depotCode: string;
-  firstName: string;
   city: string;
   username: string;
-  isCollapsed = true;
 
-  constructor(
-    private authService: AuthService
-  ) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.getCurrentLoggedInUser().subscribe(data => {

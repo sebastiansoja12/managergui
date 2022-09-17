@@ -25,16 +25,21 @@ import {LoginComponent} from './component/login/login.component';
 import {UserProfileComponent} from './component/user-profile/user-profile.component';
 import {User} from './model/user';
 import {Depot} from './model/depot';
+import {AuthService} from './service/auth/auth.service';
+import {AdministratorComponent} from './component/administrator/administrator.component';
+import {DepotModule} from '../depots/depot.module';
 
 @NgModule({
   declarations: [
     SignupComponent,
     LoginComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AdministratorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DepotModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
@@ -56,7 +61,8 @@ import {Depot} from './model/depot';
   providers: [
     DatePipe,
     User,
-    Depot
+    Depot,
+    AuthService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

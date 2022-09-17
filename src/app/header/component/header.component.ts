@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../services/auth/auth.service';
+import {AuthService} from '../../auth/service/auth/auth.service';
 
 
 @Component({

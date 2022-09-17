@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '../services/model/route';
-import {User} from '../services/model/user';
-import {RouteService} from '../services/route/route-service.service';
-import {AuthService} from '../services/auth/auth.service';
 import {LocalStorageService} from 'ngx-webstorage';
-import {UserService} from '../services/user/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
+import {Route} from '../../../routes/model/route';
+import {User} from '../../model/user';
+import {RouteService} from '../../../routes/service/route/route-service.service';
+import {AuthService} from '../../service/auth/auth.service';
+import {UserService} from '../../service/user/user.service';
 
 @Component({
   selector: 'app-administrator',
@@ -23,7 +23,7 @@ export class AdministratorComponent implements OnInit {
 
   constructor(private routeService: RouteService, private authService: AuthService,
               private localStorage: LocalStorageService, private userService: UserService,
-              private activatedRoute: ActivatedRoute, private router: Router) {
+              private activatedRoute: ActivatedRoute) {
   }
 
   // tslint:disable-next-line:typedef

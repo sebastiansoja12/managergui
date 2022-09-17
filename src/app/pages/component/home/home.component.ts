@@ -1,8 +1,5 @@
-import {Component, EventEmitter, OnInit, Output, OnDestroy} from '@angular/core';
-import {throwError} from 'rxjs';
-import {Route} from '../services/model/route';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {RouteService} from '../services/route/route-service.service';
 import noUiSlider from 'nouislider';
 import {Router} from '@angular/router';
 
@@ -15,21 +12,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  routes: Array<Route>;
+
   parcelFindForm: FormGroup;
-  dss: string;
   id: number;
-  isCollapsed = true;
   focus;
-  focus1;
-  focus2;
-  date = new Date();
-  pagination = 3;
-  pagination1 = 1;
-  @Output() parseParcelId: EventEmitter<string> = new EventEmitter();
   isError: boolean;
-  message: string;
-  constructor(private routeService: RouteService, private router: Router) {}
+
+  constructor(private router: Router) {}
   ngOnInit(): any {
     this.parcelFindForm = new FormGroup({
       id: new FormControl('', Validators.required)
@@ -63,18 +52,5 @@ export class HomeComponent implements OnInit {
   findParcel(): any {
     this.id = this.parcelFindForm.get('id').value;
     this.router.navigateByUrl('/route/parcelCode/' + this.id);
-    this.routeService.getAllRoutesByParcelId(this.id).subscribe(data => {
-      this.routes = data;
-      this.isError = false;
-    }, error => {
-      this.isError = true;
-      throwError(error);
-      this.message = 'Paczka o id: ' +  this.id + ' nie została znaleziona.\n' +
-        'Sprawdź numer swojej przesyłki i spróbuj ponownie';
-    });
-  }
-  ngOnDestroy() {
-    let body = document.getElementsByTagName('body')[0];
-    body.classList.remove('index-page');
   }
 }

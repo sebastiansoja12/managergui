@@ -31,7 +31,7 @@ import {Depot} from './model/depot';
 import {Parcel} from './model/parcel';
 import {User} from './model/user';
 import {AuthModule} from '../auth/auth.module';
-import {AuthService} from '../auth/service/auth.service';
+import {AuthService} from '../auth/service/auth/auth.service';
 import {Route} from './model/route';
 
 @NgModule({

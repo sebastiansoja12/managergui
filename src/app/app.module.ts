@@ -9,11 +9,8 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {TokenInterceptor} from './token-interceptor';
-import {HomeComponent} from './home/home.component';
-import {RouteService} from './services/route/route-service.service';
-import {Route} from './services/model/route';
+import {HomeComponent} from './pages/component/home/home.component';
 import {APP_BASE_HREF, DatePipe} from '@angular/common';
-import {AdministratorComponent} from './administrator/administrator.component';
 import {RouterModule} from '@angular/router';
 
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
@@ -28,8 +25,6 @@ import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {HeaderComponent} from './header/component/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {SupplierService} from './services/supplier/supplier.service';
-import {Supplier} from './services/model/supplier';
 import {DepotModule} from './depots/depot.module';
 import {SupplierModule} from './suppliers/supplier.module';
 import {AuthModule} from './auth/auth.module';
@@ -41,7 +36,6 @@ import {ParcelModule} from './parcels/parcel.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    AdministratorComponent,
     HeaderComponent,
     FooterComponent
   ],
@@ -80,11 +74,6 @@ DatePipe,
       useClass: TokenInterceptor,
       multi: true
     },
-    Route,
-    Supplier,
-    SupplierService,
-    RouteService,
-    AdministratorComponent
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

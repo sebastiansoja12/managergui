@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginRequestPayload } from '../../dto/login-request.payload';
 import { ActivatedRoute } from '@angular/router';
 import { throwError } from 'rxjs';
-import {AuthService} from '../../service/auth.service';
+import {AuthService} from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-login',

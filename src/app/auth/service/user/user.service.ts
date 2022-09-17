@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {User} from '../model/user';
 import {HttpClient} from '@angular/common/http';
-import {LocalStorageService} from 'ngx-webstorage';
-import {globalUrl} from '../../../../urlConfig';
+import {globalUrl} from '../../../../../urlConfig';
+import {User} from '../../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +10,11 @@ import {globalUrl} from '../../../../urlConfig';
 export class UserService {
 
   userUrl: string;
-  adminUrl: string;
   url: string;
 
 
-  constructor(private http: HttpClient, private localStorage: LocalStorageService) {
+  constructor(private http: HttpClient) {
     this.userUrl = '/api/users/all';
-    this.adminUrl = 'http://localhost:8080/api/users/all/user/';
     this.url = globalUrl.url;
   }
 

@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {Depot} from '../../../services/model/depot';
 import {DepotService} from '../../service/depot/depot.service';
+import {Depot} from '../../model/depot';
 
 @Component({
   selector: 'app-depot-all',
