@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { Observable, BehaviorSubject, throwError } from 'rxjs';
-import { catchError, switchMap, take, filter } from 'rxjs/operators';
-import { LoginResponse } from './auth/dto/login-response.payload';
-import {AuthService} from './auth/service/auth/auth.service';
+import {Injectable} from '@angular/core';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {BehaviorSubject, Observable, throwError} from 'rxjs';
+import {AuthService} from '../../services/auth/auth.service';
+import {LoginResponse} from '../dto/login-response.payload';
+import {catchError, filter, switchMap, take} from 'rxjs/operators';
 
-// @ts-ignore
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class TokenInterceptor implements HttpInterceptor {
+
   isTokenRefreshing = false;
   refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
 
@@ -26,7 +26,7 @@ export class TokenInterceptor implements HttpInterceptor {
     if (jwtToken) {
       return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
         if (error instanceof HttpErrorResponse
-          && error.status === 403) {
+          && error.status === 403 || error.status === 500) {
           return this.handleAuthErrors(req, next);
         } else {
           return throwError(error);

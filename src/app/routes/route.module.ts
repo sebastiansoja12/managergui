@@ -1,16 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
-import {TokenInterceptor} from './token-interceptor';
-import {HomeComponent} from './pages/component/home/home.component';
-import {APP_BASE_HREF, DatePipe} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
@@ -23,31 +18,33 @@ import {AlertModule} from 'ngx-bootstrap/alert';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {ModalModule} from 'ngx-bootstrap/modal';
-import {HeaderComponent} from './header/component/header.component';
-import {FooterComponent} from './footer/footer.component';
-import {DepotModule} from './depots/depot.module';
-import {SupplierModule} from './suppliers/supplier.module';
-import {AuthModule} from './auth/auth.module';
-import {RouteModule} from './routes/route.module';
-import {RerouteModule} from './reroutes/reroute.module';
-import {ParcelModule} from './parcels/parcel.module';
+import {AppRoutingModule} from '../app-routing.module';
+import {DatePipe} from '@angular/common';
+import {RouteFormComponent} from './component/route-find/route-form.component';
+import {RouteGetComponent} from './component/route-get/route-get.component';
+import {RouteListComponent} from './component/route-list/route-list.component';
+import {RouteViewComponent} from './component/route-view/route-view.component';
+import {RouteService} from './service/route/route-service.service';
+import {SupplierService} from './service/supplier/supplier.service';
+import {Supplier} from './model/supplier';
+import {Depot} from './model/depot';
+import {Parcel} from './model/parcel';
+import {User} from './model/user';
+import {AuthModule} from '../auth/auth.module';
+import {AuthService} from '../auth/service/auth/auth.service';
+import {Route} from './model/route';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent
+    RouteFormComponent,
+    RouteGetComponent,
+    RouteListComponent,
+    RouteViewComponent
   ],
   imports: [
     BrowserModule,
-    DepotModule,
-    SupplierModule,
-    AuthModule,
-    RouteModule,
-    RerouteModule,
-    ParcelModule,
     AppRoutingModule,
+    AuthModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
@@ -65,18 +62,19 @@ import {ParcelModule} from './parcels/parcel.module';
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     ReactiveFormsModule
-
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' },
-DatePipe,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    },
+  providers: [
+    DatePipe,
+    RouteService,
+    SupplierService,
+    Supplier,
+    Depot,
+    Parcel,
+    User,
+    Route,
+    AuthService
   ],
-  bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class AppModule { }
+export class RouteModule { }
