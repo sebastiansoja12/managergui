@@ -1,4 +1,4 @@
 export class RerouteRequest {
-  parcelId: string;
+  parcelId: number;
   email: string;
 }

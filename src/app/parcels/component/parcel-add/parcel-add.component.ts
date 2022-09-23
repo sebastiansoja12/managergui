@@ -51,6 +51,9 @@ export class ParcelAddComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       senderTelephone: new FormControl('', Validators.required),
       senderEmail: new FormControl('', Validators.required),
+      senderCity: new FormControl('', Validators.required),
+      senderStreet:  new FormControl('', Validators.required),
+      senderPostalCode:  new FormControl('', Validators.required),
       recipientFirstName: new FormControl('', Validators.required),
       recipientLastName: new FormControl('', Validators.required),
       recipientTelephone: new FormControl('', Validators.required),
@@ -72,6 +75,9 @@ export class ParcelAddComponent implements OnInit {
     this.parcel.lastName = this.createParcelForm.get('lastName').value;
     this.parcel.senderTelephone = this.createParcelForm.get('senderTelephone').value;
     this.parcel.senderEmail = this.createParcelForm.get('senderEmail').value;
+    this.parcel.senderCity = this.createParcelForm.get('senderCity').value;
+    this.parcel.senderStreet = this.createParcelForm.get('senderStreet').value;
+    this.parcel.senderPostalCode = this.createParcelForm.get('senderPostalCode').value;
     this.parcel.recipientFirstName = this.createParcelForm.get('recipientFirstName').value;
     this.parcel.recipientLastName = this.createParcelForm.get('recipientLastName').value;
     this.parcel.recipientTelephone = this.createParcelForm.get('recipientTelephone').value;

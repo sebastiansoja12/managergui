@@ -93,6 +93,39 @@
                     />
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Miasto </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderCity'"
+                      [(ngModel)]="parcel.senderCity"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Kod pocztowy </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderPostalCode'"
+                      [(ngModel)]="parcel.senderPostalCode"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label> Ulica </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderStreet'"
+                      [(ngModel)]="parcel.senderStreet"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

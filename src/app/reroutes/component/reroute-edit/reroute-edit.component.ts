@@ -51,6 +51,9 @@ export class RerouteEditComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       senderTelephone: new FormControl('', Validators.required),
       senderEmail: new FormControl('', Validators.required),
+      senderCity: new FormControl('', Validators.required),
+      senderStreet:  new FormControl('', Validators.required),
+      senderPostalCode:  new FormControl('', Validators.required),
       recipientFirstName: new FormControl('', Validators.required),
       recipientLastName: new FormControl('', Validators.required),
       recipientTelephone: new FormControl('', Validators.required),
@@ -66,6 +69,9 @@ export class RerouteEditComponent implements OnInit {
     this.parcel.lastName = this.updateParcelForm.get('lastName').value;
     this.parcel.senderTelephone = this.updateParcelForm.get('senderTelephone').value;
     this.parcel.senderEmail = this.updateParcelForm.get('senderEmail').value;
+    this.parcel.senderCity = this.updateParcelForm.get('senderCity').value;
+    this.parcel.senderPostalCode = this.updateParcelForm.get('senderPostalCode').value;
+    this.parcel.senderStreet = this.updateParcelForm.get('senderStreet').value;
     this.parcel.recipientFirstName = this.updateParcelForm.get('recipientFirstName').value;
     this.parcel.recipientLastName = this.updateParcelForm.get('recipientLastName').value;
     this.parcel.recipientTelephone = this.updateParcelForm.get('recipientTelephone').value;

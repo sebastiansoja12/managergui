@@ -7,6 +7,9 @@ export class Parcel {
   lastName: string;
   senderTelephone: string;
   senderEmail: string;
+  senderCity: string;
+  senderStreet: string;
+  senderPostalCode: string;
   recipientTelephone: string;
   recipientCity: string;
   recipientEmail: string;

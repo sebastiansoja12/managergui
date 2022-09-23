@@ -15,7 +15,7 @@ export class RerouteCreateComponent implements OnInit {
 
   constructor(private rerouteService: RerouteService, private router: Router) {
     this.rerouteRequest = {
-      parcelId: '',
+      parcelId: null,
       email: '',
     };
   }
