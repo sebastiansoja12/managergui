@@ -1,1 +1,83 @@
-<p>depot-create works!</p>
+<section class="supplier-create">
+  <div class="container">
+    <div class="alerts" id="alert">
+      <alert
+        class="alert-with-icon"
+        [type]="'warning alert-with-icon'"
+        [dismissible]="true"
+        *ngIf="isError"
+      >
+        <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+        <span>Błąd! Sprawdź poprawność danych i spróbuj ponownie.</span>
+      </alert>
+    </div>
+    <div class="alerts" id="alert">
+      <alert
+        class="alert-with-icon"
+        [type]="'success alert-with-icon'"
+        [dismissible]="true"
+        *ngIf="isAdded"
+      >
+        <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+        <span>Oddział: {{depot.depotCode}} został pomyślnie dodany!</span>
+      </alert>
+    </div>
+    <div class="footer-content">
+      <div class="row">
+        <div class="contact-form">
+          <form id="contact" action="" method="post" [formGroup]="createDepotForm" (ngSubmit)="createDepot()">
+            <div class="center-heading">
+              <p class="section-title">Dodaj oddział</p>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <fieldset>
+                  <div class="user-name">
+                    <input type="text" [formControlName]="'city'" id="city"
+                           placeholder="Miasto" required=""
+                           class="form-control" name="supplierFirstName">
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-md-12 col-lg-6">
+                <fieldset>
+                  <div class="user-name">
+                    <input type="text" [formControlName]="'street'" class="form-control"
+                           placeholder="Ulica" id="supplierLastName" required="">
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <fieldset>
+                  <div class="user-name">
+                    <input type="text" [formControlName]="'country'" id="supplierTelephoneNumber"
+                           class="form-control"
+                           name="country" placeholder="Kraj" required="">
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <fieldset>
+                  <div class="user-name">
+                    <input type="text" [formControlName]="'depotCode'" id="depotCode"
+                           class="form-control" name="lastName"
+                           placeholder="Kod oddziału" required="">
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6 col-lg-12"><h1></h1></div>
+              <div class="col-md-6 col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button">Dodaj</button>
+                </fieldset>
+              </div>
+              <div class="center-heading">
+                <p class="signup-failed-text" *ngIf='this.isError'>Nie udało się dodać oddziału</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
