@@ -23,7 +23,7 @@ export class DepotService {
     return this.http.get<Depot[]>(this.depotUrl);
   }
 
-  public saveDepot(depot: Depot): Observable<boolean> {
+  public saveDepot(depot: Array<Depot>): Observable<boolean> {
     return this.http.post(this.depotUrl, depot, {responseType: 'text'})
       .pipe(map(data => {
         return true;
