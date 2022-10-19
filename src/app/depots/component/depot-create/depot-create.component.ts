@@ -15,8 +15,10 @@ export class DepotCreateComponent implements OnInit {
   createDepotForm: FormGroup;
   isAdded: boolean;
   depot: Depot;
+  depotList: Array<Depot>;
 
   constructor(private depotService: DepotService) {
+    this.depotList = new Array<Depot>();
     this.depot = {
       id: null,
       city: '',
@@ -40,7 +42,8 @@ export class DepotCreateComponent implements OnInit {
     this.depot.street = this.createDepotForm.get('street').value;
     this.depot.country = this.createDepotForm.get('country').value;
     this.depot.depotCode = this.createDepotForm.get('depotCode').value;
-    this.depotService.saveDepot(this.depot).subscribe(data => {
+    this.depotList.push(this.depot);
+    this.depotService.saveDepot(this.depotList).subscribe(data => {
       this.isError = false;
       this.isAdded = true;
     }, error => {
