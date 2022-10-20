@@ -1,0 +1,225 @@
+<div class="parcel-add-section">
+  <form [formGroup]="updateParcelForm" (ngSubmit)="updateParcel()">
+    <div class="alerts" id="alert">
+      <alert
+        class="alert-with-icon"
+        [type]="'success alert-with-icon'"
+        [dismissible]="true"
+        *ngIf="isSuccessfullyUpdated"
+      >
+        <span class="tim-icons icon-bell-55" data-notify="icon"> </span>
+        <span>
+          Dane przesyłki o numerze - <b>{{this.parcelId}}</b> zostały zaktualizowane!
+    </span>
+      </alert>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-grid">
+                <button id="form-submit" class="btn btn-test submit">
+                  Zaktualizuj
+                </button>
+                <alert
+                  class="alert-with-icon"
+                  [type]="'warning alert-with-icon'"
+                  [dismissible]="true"
+                  *ngIf="isError"
+                >
+                  <span class="tim-icons icon-bulb-63" data-notify="icon"> </span>
+                  <span>
+                      <b> Błąd! - </b> Dane przesyłki nie zostały zaktualizowane.
+                      Sprawdź poprawność danych i spróbuj ponownie.
+                    </span>
+                </alert>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="card">
+            <div class="card-body">
+              <h1>Dane nadawcy</h1>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Imię </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      required=""
+                      [formControlName]="'firstName'"
+                      id="firstName"
+                      [(ngModel)]="parcel.firstName"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Nazwisko </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      required=""
+                      [formControlName]="'lastName'"
+                      id="lastName"
+                      [(ngModel)]="parcel.lastName"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Telefon </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderTelephone'"
+                      [(ngModel)]="parcel.senderTelephone"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Email </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderEmail'"
+                      [(ngModel)]="parcel.senderEmail"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Miasto </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderCity'"
+                      [(ngModel)]="parcel.senderCity"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Kod pocztowy </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderPostalCode'"
+                      [(ngModel)]="parcel.senderPostalCode"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label> Ulica </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'senderStreet'"
+                      [(ngModel)]="parcel.senderStreet"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h1>Dane odbiorcy</h1>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Imię </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientFirstName'"
+                      [(ngModel)]="parcel.recipientFirstName"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Nazwisko </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientLastName'"
+                      [(ngModel)]="parcel.recipientLastName"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Telefon </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientTelephone'"
+                      [(ngModel)]="parcel.recipientTelephone"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Email </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientEmail'"
+                      [(ngModel)]="parcel.recipientEmail"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Miasto </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientCity'"
+                      [(ngModel)]="parcel.recipientCity"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> Kod pocztowy </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientPostalCode'"
+                      [(ngModel)]="parcel.recipientPostalCode"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label> Ulica </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      [formControlName]="'recipientStreet'"
+                      [(ngModel)]="parcel.recipientStreet"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

@@ -129,6 +129,10 @@
   @include btn-styles($dev, $info-states);
 }
 
+.btn-test {
+  @include btn-styles($test, $test);
+}
+
 .btn {
   &:disabled,
   &[disabled],

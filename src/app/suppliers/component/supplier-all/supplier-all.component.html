@@ -1,0 +1,27 @@
+<section class="supplier-section">
+  <div class="hello">
+    <h1>Dostawcy w oddziale</h1>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th class="text-center">Kod dostawcy</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Telefon</th>
+      <th>Kod oddziału</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let supplier of suppliers">
+      <td class="text-center"> {{supplier.supplierCode}} </td>
+      <td>{{supplier.firstName}}</td>
+      <td>{{supplier.lastName}}</td>
+      <td>{{supplier.telephone}}</td>
+      <td>{{supplier.depot.depotCode}}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
