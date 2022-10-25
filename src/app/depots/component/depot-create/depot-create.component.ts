@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Depot} from '../../../suppliers/model/depot';
-import {throwError} from 'rxjs';
 import {DepotService} from '../../service/depot/depot.service';
+import {throwError} from 'rxjs';
 
 @Component({
   selector: 'app-depot-create',
