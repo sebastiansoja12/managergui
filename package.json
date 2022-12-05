@@ -1,6 +1,6 @@
 {
   "name": "inparcel-gui",
-  "version": "2022.14",
+  "version": "2022.15",
   "scripts": {
     "ng": "ng",
     "build": "ng build --watch=true",
