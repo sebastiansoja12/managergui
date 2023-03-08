@@ -1,5 +1,5 @@
 export const globalUrl = {
-  url: 'https://inparcel.herokuapp.com'
+  url: 'https://inparcel-dev.herokuapp.com'
 }
 export const testUrl = {
   url: 'https://inparcel-test.herokuapp.com'
